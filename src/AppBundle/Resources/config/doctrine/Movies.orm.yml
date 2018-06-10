@@ -1,0 +1,18 @@
+AppBundle\Entity\Movies:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\MoviesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        movies:
+            type: string
+            length: 255
+        year:
+            type: date
+            nullable: true
+    lifecycleCallbacks: {  }
