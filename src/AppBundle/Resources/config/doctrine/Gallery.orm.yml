@@ -1,0 +1,22 @@
+AppBundle\Entity\Gallery:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\GalleryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+
+    manyToOne:
+            header:
+              targetEntity: AppBundle\Entity\Header
+              joinColumn:
+                name: header_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

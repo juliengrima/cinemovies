@@ -1,0 +1,90 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+app_header:
+    resource: "@AppBundle/Resources/config/routing/header.yml"
+    prefix:   /header
+
+##############################################
+#                                            #
+#                   GALLERY                  #
+#                                            #
+##############################################
+
+app_gallery:
+    resource: "@AppBundle/Resources/config/routing/gallery.yml"
+    prefix:   /gallery
+
+##############################################
+#                                            #
+#                 SUB GALLERY                #
+#                                            #
+##############################################
+
+app_subgallery:
+      resource: "@AppBundle/Resources/config/routing/subgallery.yml"
+      prefix:   /subgallery
+
+##############################################
+#                                            #
+#                     ABOUT                  #
+#                                            #
+##############################################
+
+app_about:
+        resource: "@AppBundle/Resources/config/routing/about.yml"
+        prefix:   /about
+
+##############################################
+#                                            #
+#                  PARTNER                   #
+#                                            #
+##############################################
+
+app_partner:
+     resource: "@AppBundle/Resources/config/routing/partner.yml"
+     prefix:   /partner
+
+
+############################################################################################################
+
+
+##########################################
+########   Routes Calendrier   ###########
+##########################################
+
+calendar:
+    resource: "@CalendarBundle/Resources/config/routing.yml"
+    prefix:   /
+
+##########################################
+###########   Routes ADMIN   #############
+##########################################
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+##########################################
+############   FosJSRoutung   ############
+##########################################
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+    prefix:   /
+
+##########################################
+##############   FosJUser   ##############
+##########################################
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+##########################################
+##############   LIIP IMAGINE   ##########
+##########################################
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
