@@ -42,6 +42,11 @@ class Movies
      */
     private $category;
 
+    /**
+     * @var \AppBundle\Entity\Category
+     */
+    private $gallery;
+
 
     /**
      * Get id
@@ -192,15 +197,10 @@ class Movies
      *
      * @return \AppBundle\Entity\Category
      */
-    public function getGallery()
+    public function getCategory()
     {
         return $this->category;
     }
-    /**
-     * @var \AppBundle\Entity\Category
-     */
-    private $gallery;
-
 
     /**
      * Set gallery
@@ -214,5 +214,15 @@ class Movies
         $this->gallery = $gallery;
 
         return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AppBundle\Entity\Category
+     */
+    public function getGallery()
+    {
+        return $this->category;
     }
 }

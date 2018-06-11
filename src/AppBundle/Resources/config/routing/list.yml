@@ -1,4 +1,0 @@
-listpage:
-    path:     /list
-    defaults: { _controller: "AppBundle:Default:list" }
-    methods:  GET

@@ -34,22 +34,4 @@ class DefaultController extends Controller
             'agendas' => $agenda
         ));
     }
-
-    //    LIST OF MOVIES
-    /**
-     * @Route("/", name="listpage")
-     */
-    public function listAction(Request $request)
-    {
-        $category = new category;
-        $category = $_GET['id'];
-
-        $em = $this->getDoctrine()->getManager();
-        $movies = $em->getRepository('AppBundle:Movies')->findBy( array('category' => $category));
-
-        return $this->render('default/list.html.twig', array(
-            'movies' => $movies,
-        ));
-    }
-
 }
