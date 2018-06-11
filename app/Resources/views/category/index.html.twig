@@ -6,14 +6,14 @@
 
         <ul id="dropdown2" class="dropdown-content">
 
-            {% for gallery in galleries %}
+            {% for category in categories %}
 
-                <li><a href="">{{ gallery.name }}</a></li>
+                <li><a href="">{{ category.category }}</a></li>
 
             {% endfor %}
 
             <li>
-                <a href="{{ path('header_new') }}" class="btn-floating btn-large waves-effect waves-light green darken-1 bouton-new-gallery">
+                <a href="{{ path('category_new') }}" class="btn-floating btn-large waves-effect waves-light green darken-1 bouton-new-gallery">
                     <i class=" material-icons bouton-new-gallery-icon">add</i>
                 </a>
             </li>

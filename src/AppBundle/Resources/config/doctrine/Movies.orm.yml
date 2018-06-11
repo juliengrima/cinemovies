@@ -1,7 +1,7 @@
-AppBundle\Entity\SubGallery:
+AppBundle\Entity\Movies:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\SubGalleryRepository
+    repositoryClass: AppBundle\Repository\MoviesRepository
     id:
         id:
             type: integer
@@ -9,29 +9,30 @@ AppBundle\Entity\SubGallery:
             generator:
                 strategy: AUTO
     fields:
-        sgallery:
+        movies:
             type: string
             length: 255
-        prix:
-            type: string
-            length: 255
-            nullable: true
-        description:
-            type: text
+        year:
+            type: date
             nullable: true
         slider:
             type: boolean
             nullable: true
 
+#RELATIONS BETWEEN TABLES
+
     manyToOne:
         gallery:
-          targetEntity: AppBundle\Entity\Gallery
+          targetEntity: AppBundle\Entity\Category
           joinColumn:
-            name: gallery_id
+            name: Category_id
             referencedColumnName: id
             cascade: ['all']
+    oneToOne:
         media:
           targetEntity: AppBundle\Entity\Media
           cascade: ['all']
-
+        resume:
+          targetEntity: AppBundle\Entity\Resume
+          cascade: ['all']
     lifecycleCallbacks: {  }

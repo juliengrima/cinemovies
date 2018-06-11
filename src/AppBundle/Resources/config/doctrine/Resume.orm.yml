@@ -1,7 +1,7 @@
-AppBundle\Entity\Media:
+AppBundle\Entity\Resume:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\MediaRepository
+    repositoryClass: AppBundle\Repository\ResumeRepository
     id:
         id:
             type: integer
@@ -9,12 +9,15 @@ AppBundle\Entity\Media:
             generator:
                 strategy: AUTO
     fields:
-        picname:
+        resume:
+            type: text
+            nullable: true
+        author:
             type: string
             length: 255
-            nullable: false
-        picpath:
+            nullable: true
+        actors:
             type: string
             length: 255
-            nullable: false
+            nullable: true
     lifecycleCallbacks: {  }

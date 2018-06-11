@@ -22,11 +22,11 @@ class HeaderController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $headers = $em->getRepository('AppBundle:Header')->findAll();
-        $galleries = $em->getRepository('AppBundle:Gallery')->findBy(array ('header' => $headers)); //array ('id' => $headers)
+        $categories = $em->getRepository('AppBundle:Category')->findBy(array ('header' => $headers)); //array ('id' => $headers)
 
         return $this->render('header/index.html.twig', array(
             'headers' => $headers,
-            'galleries' => $galleries,
+            'categories' => $categories,
         ));
     }
 

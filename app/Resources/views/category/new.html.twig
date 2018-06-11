@@ -10,42 +10,46 @@
                     <div class="col s12">
 
                         <div class="row">
-                            <div class="col l4 center">
-                                <p class="title">Identifiant</p>
+                            <h1 class="center">Ajout d'une nouvelle gallerie</h1>
+                        </div>
+
+                        {{ form_start(form) }}
+
+                        <div class="row">
+                            <div class="col s12 m6 l3">
+                                <p>Sélection de la catégorie :</p>
                             </div>
-                            <div class="col l4 center">
-                                <p class="title">Nom de catégorie</p>
-                            </div>
-                            <div class="col l4 center">
-                                <p class="title">Action</p>
+                            <div class="col s12 m6 l3">
+                                {{ form_widget(form.header) }}
+                                {{ form_errors(form.header) }}
                             </div>
                         </div>
 
-                        {% for gallery in galleries %}
-                            <div class="row">
-                                <div class="col l4 center">
-                                    <p>{{ gallery.id }}</p>
-                                </div>
-                                <div class="col l4">
-                                    <p class="decal">{{ gallery.name }}</p>
-                                </div>
-                                <div class="col l4 center">
-                                    <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}">
-                                        <button class="user btn-floating btn-large waves-effect tooltipped icon-background4 orange darken-2" type="submit" name="action"
-                                                data-position="bottom"
-                                                data-delay="50"
-                                                data-tooltip="Editer">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                    </a>
-                                </div>
-
+                        <div class="row">
+                            <div class="col s12 m6 l3">
+                                <p>Nom de la nouvelle catégorie :</p>
                             </div>
-                            {% endfor %}
-
-                        <div class="header-buttom-marge">
-
+                            <div class="col s12 m6 l3">
+                                {{ form_widget(form.category) }}
+                                {{ form_errors(form.category) }}
+                            </div>
                         </div>
+
+                        <div class="center">
+                            <button class="btn-floating btn-large waves-effect waves-light green darken-1 modal-action modal-close"
+                                    type="submit">
+                                <i class="material-icons">check</i>
+                            </button>
+
+                            <a class="btn-floating btn-large waves-effect waves-light blue darken-1 modal-action modal-close"
+                               href="{{ path('homepage') }}">
+                                <i class="small material-icons">home</i>
+                            </a>
+                        </div>
+
+                        {{ form_end(form) }}
+
+                        <div class="header-buttom-marge"></div>
 
                     </div>
                 </div>
