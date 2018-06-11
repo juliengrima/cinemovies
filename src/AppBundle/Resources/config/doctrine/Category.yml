@@ -1,7 +1,7 @@
-AppBundle\Entity\Gallery:
+AppBundle\Entity\Category:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\GalleryRepository
+    repositoryClass: AppBundle\Repository\CategoryRepository
     id:
         id:
             type: integer
@@ -9,7 +9,7 @@ AppBundle\Entity\Gallery:
             generator:
                 strategy: AUTO
     fields:
-        name:
+        category:
             type: string
             length: 255
 

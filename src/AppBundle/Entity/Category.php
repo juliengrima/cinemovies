@@ -3,15 +3,15 @@
 namespace AppBundle\Entity;
 
 /**
- * Gallery
+ * Category
  */
-class Gallery
+class Category
 {
 
     public function __toString()
     {
         // TODO: Implement __toString() method.
-        return $this->name;
+        return $this->category;
     }
 
     /**
@@ -22,7 +22,7 @@ class Gallery
     /**
      * @var string
      */
-    private $name;
+    private $category;
 
     /**
      * @var \AppBundle\Entity\Header
@@ -44,11 +44,11 @@ class Gallery
      *
      * @param string $name
      *
-     * @return Gallery
+     * @return Category
      */
-    public function setName($name)
+    public function setName($category)
     {
-        $this->name = $name;
+        $this->name = $category;
 
         return $this;
     }
@@ -60,7 +60,7 @@ class Gallery
      */
     public function getName()
     {
-        return $this->name;
+        return $this->category;
     }
 
     /**
@@ -68,7 +68,7 @@ class Gallery
      *
      * @param \AppBundle\Entity\Header $header
      *
-     * @return Gallery
+     * @return Category
      */
     public function setHeader(\AppBundle\Entity\Header $header = null)
     {
