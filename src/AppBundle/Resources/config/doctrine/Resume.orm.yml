@@ -20,5 +20,4 @@ AppBundle\Entity\Resume:
             type: string
             length: 255
             nullable: true
-
     lifecycleCallbacks: {  }

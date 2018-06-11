@@ -19,6 +19,8 @@ AppBundle\Entity\Movies:
             type: boolean
             nullable: true
 
+#RELATIONS BETWEEN TABLES
+
     manyToOne:
         gallery:
           targetEntity: AppBundle\Entity\Category

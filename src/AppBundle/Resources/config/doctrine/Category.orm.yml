@@ -13,12 +13,12 @@ AppBundle\Entity\Category:
             type: string
             length: 255
 
+#RELATIONS BETWEEN TABLES
+
     manyToOne:
         header:
           targetEntity: AppBundle\Entity\Header
           joinColumn:
             name: header_id
             referencedColumnName: id
-
-
     lifecycleCallbacks: {  }
