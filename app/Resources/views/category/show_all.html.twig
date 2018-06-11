@@ -10,27 +10,33 @@
                     <div class="col s12">
 
                         <div class="row">
-                            <div class="col l4 center">
+                            <div class="col l3 center">
                                 <p class="title">Identifiant</p>
                             </div>
-                            <div class="col l4 center">
+                            <div class="col l3 center">
                                 <p class="title">Nom de catégorie</p>
                             </div>
-                            <div class="col l4 center">
+                            <div class="col l3 center">
+                                <p class="title">Classement</p>
+                            </div>
+                            <div class="col l3 center">
                                 <p class="title">Action</p>
                             </div>
                         </div>
 
-                        {% for gallery in galleries %}
+                        {% for category in categories %}
                             <div class="row">
-                                <div class="col l4 center">
-                                    <p>{{ gallery.id }}</p>
+                                <div class="col l3 center">
+                                    <p>{{ category.id }}</p>
                                 </div>
-                                <div class="col l4">
-                                    <p class="decal">{{ gallery.name }}</p>
+                                <div class="col l3">
+                                    <p class="decal">{{ category.category }}</p>
                                 </div>
-                                <div class="col l4 center">
-                                    <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}">
+                                <div class="col l3">
+                                    <p class="decal">{{ category.header }}</p>
+                                </div>
+                                <div class="col l3 center">
+                                    <a href="{{ path('category_edit', { 'id': category.id }) }}">
                                         <button class="user btn-floating btn-large waves-effect tooltipped icon-background4 orange darken-2" type="submit" name="action"
                                                 data-position="bottom"
                                                 data-delay="50"
