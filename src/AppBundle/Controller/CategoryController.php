@@ -29,18 +29,6 @@ class CategoryController extends Controller
         ));
     }
 
-
-//    public function layoutAction()
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $categories = $em->getRepository('AppBundle:Category')->findAll();
-//
-//        return $this->render('::layout.html.twig', array(
-//            'categories' => $categories,
-//        ));
-//    }
-
     /**
      * Creates a new category entity.
      *
@@ -98,10 +86,10 @@ class CategoryController extends Controller
      * Displays a form to edit an existing category entity.
      *
      */
-    public function editAction(Request $request, Controller $category)
+    public function editAction(Request $request, Category $category)
     {
         $deleteForm = $this->createDeleteForm($category);
-        $editForm = $this->createForm('CategoryType', $category);
+        $editForm = $this->createForm('AppBundle\Form\CategoryType', $category);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
