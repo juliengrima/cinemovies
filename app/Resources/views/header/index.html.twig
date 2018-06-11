@@ -1,3 +1,4 @@
+{# CSS STYLE UNIQUELY FOR THIS HEADER #}
 <style>
     .brand-logo{
         font-weight:900;
@@ -49,6 +50,8 @@
 
 </style>
 
+{# THIS IS THE NAVBAR WITH JQUERY FUNCTION#}
+
 <nav>
     <div class="nav-wrapper grey darken-3">
         <a href="{{ path('homepage') }}" class="brand-logo accueil">Accueil</a>
@@ -71,29 +74,31 @@
         </ul>
     </div>
 </nav>
+
 <!-- Dropdown Structure -->
+
 {% for header in headers %}
     <ul id="dropdown{{ header.id }}" class="dropdown-content collection index">
-        {% for gallery in galleries %}
-            {% if header == gallery.header %}
+        {% for category in categories %}
+            {% if header == category.header %}
             <li class="collection-item avatar">
-                <a href="{{ path('list_show', { 'id': gallery.id }) }}" class="a-input">{{ gallery.name }}</a>
+                <a href="{{ path('list_show', { 'id': category.id }) }}" class="a-input">{{ category.category }}</a>
 
-                {# ---------------------- ADMINISTRATEUR -------------------#}
+                {# ---------------------- ADMINISTRATOR -------------------#}
                 {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}" class="secondary-content"><img src="{{ asset('images/local/icons/edit.svg') }}" class="plus-icon-index"></a>
+                    <a href="{{ path('category_edit', { 'id': category.id }) }}" class="secondary-content"><img src="{{ asset('images/local/icons/edit.svg') }}" class="plus-icon-index"></a>
                 {% endif %}
             </li>
             {% endif %}
         {% endfor %}
 
-        {# ---------------------- ADMINISTRATEUR -------------------#}
+        {# ---------------------- ADMINISTRATOR -------------------#}
         {% if is_granted('ROLE_ADMIN') %}
             <li>
-                <a href="{{ path('gallery_new') }}" class="left">
+                <a href="{{ path('category_new') }}" class="left">
                     <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon-index">
                 </a>
-                <a href="{{ path('gallery_show_all') }}" class="right">
+                <a href="{{ path('category_show_all') }}" class="right">
                     <img src="{{ asset('images/local/icons/shuffle.svg') }}" class="plus-icon-index">
                 </a>
             </li>
@@ -101,9 +106,10 @@
     </ul>
 {% endfor %}
 <div class="nav-content backcontent center">
-    <span class="nav-title f-size">Nathalie Sian Créations</span>
+    <span class="nav-title f-size">CinéMove</span>
 </div>
 
+{# JQUERY DROPDOWN SCRIPT HEADER LOOP #}
 
 <script>
 
