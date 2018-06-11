@@ -82,7 +82,7 @@
         {% for category in categories %}
             {% if header == category.header %}
             <li class="collection-item avatar">
-                <a href="{{ path('list_show', { 'id': category.id }) }}" class="a-input">{{ category.category }}</a>
+                <a href="{{ path('listpage', { 'id': category.id }) }}" class="a-input">{{ category.category }}</a>
 
                 {# ---------------------- ADMINISTRATOR -------------------#}
                 {% if is_granted('ROLE_ADMIN') %}

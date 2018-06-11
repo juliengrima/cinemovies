@@ -44,8 +44,7 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/header, role: ROLE_ADMIN }
         - { path: ^/header/index.html, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/gallery, role: ROLE_ADMIN }
-        - { path: ^/subgallery, role: ROLE_ADMIN }
+        - { path: ^/category, role: ROLE_ADMIN }
         - { path: ^/calendar, role: ROLE_ADMIN }
 
             # activate different ways to authenticate

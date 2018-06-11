@@ -13,7 +13,7 @@ class CategoryType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name');
+        $builder->add('category');
         $builder->add('header');
     }
     
@@ -23,7 +23,7 @@ class CategoryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Gallery'
+            'data_class' => 'AppBundle\Entity\Category'
         ));
     }
 
@@ -32,7 +32,7 @@ class CategoryType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_gallery';
+        return 'appbundle_category';
     }
 
 

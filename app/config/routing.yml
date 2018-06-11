@@ -18,13 +18,13 @@ app_gallery:
 
 ##############################################
 #                                            #
-#                 SUB GALLERY                #
+#                  LISTPAGE                  #
 #                                            #
 ##############################################
 
-app_subgallery:
-      resource: "@AppBundle/Resources/config/routing/subgallery.yml"
-      prefix:   /subgallery
+app_list:
+    resource: "@AppBundle/Resources/config/routing/list.yml"
+    prefix:   /list
 
 ############################################################################################################
 

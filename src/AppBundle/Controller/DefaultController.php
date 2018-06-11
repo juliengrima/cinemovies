@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Category;
 use AppBundle\Form\CategoryType;
+use ffmpeg_movie;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,6 +16,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
+
+//    DEFAULTCNTROLLER USING FOR ALL RENDER WITH NO CRUD
 
 //    HOMEPAGE
     /**
@@ -32,34 +35,21 @@ class DefaultController extends Controller
         ));
     }
 
+    //    LIST OF MOVIES
     /**
-     * @Route("/", name="layout")
+     * @Route("/", name="listpage")
      */
-    public function layoutAction(Request $request)
+    public function listAction(Request $request)
     {
+        $category = new category;
+        $category = $_GET['id'];
+
         $em = $this->getDoctrine()->getManager();
-        $personnages = $em->getRepository('AppBundle:Gallery')->findAll();
+        $movies = $em->getRepository('AppBundle:Movies')->findBy( array('category' => $category));
 
-        if( $personnages != ""){
-            $normalizer = new ObjectNormalizer(); //Normalisation des données pour passer en JSON
-            $normalizer->setIgnoredAttributes(array('id'));
-            $encoder = new JsonEncoder(); // Encodage des données en JSON
-            $serializer = new Serializer(array($normalizer), array($encoder));
-
-            $jsonObject = $serializer->serialize($personnages, 'json');
-
-            $content = $this->renderView('gallery/index.html.twig', array(
-                'personnages'=>$personnages
-            ));
-            $response = new JsonResponse($content);
-
-            return $response;
-        }
-        else{
-
-            return $this->render('layout.html.twig');
-
-        }
-
+        return $this->render('default/list.html.twig', array(
+            'movies' => $movies,
+        ));
     }
+
 }
