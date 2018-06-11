@@ -36,15 +36,18 @@
                 <!------------------------------- --------------- ------------------------------------->
                 <!------------------------------- --------------- ------------------------------------->
 
-                <div id="modal{{ subGallery.id }}" class="modal modal-fixed-footer">
+                <div id="modal{{ movie.id }}" class="modal modal-fixed-footer">
                     <div class="modal-content">
-                        <h4 class="center">{{ subGallery.sgallery }}</h4>
-                        <p>{{ subGallery.description }}</p>
+                        <h4 class="center">{{ movie.movies }}</h4>
+                        <p>{{ movie.resume.author }}</p>
                         <div>
-                            <img id="{{ subGallery.id }}" src="{{ asset(subGallery.media.picpath) }}" alt="{{ subGallery.media.picname }}" class="picratio-modal right"/>
+                            <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio-modal right"/>
                         </div>
                         <div class="valign">
-                            <p>{{ subGallery.prix }} €</p>
+                            <p>acteurs : {{ movie.resume.actors }}</p>
+                        </div>
+                        <div class="valign">
+                            <p>{{ movie.resume.resume }}</p>
                         </div>
                     </div>
                     <div class="modal-footer">
