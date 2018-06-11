@@ -58,14 +58,14 @@ class MoviesController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            /* ON RECUP LE FICHIER IMAGE */
+            /* KEEP PICTURE */
             $imageForm = $form->get ('media');
             $image = $imageForm->getData ();
             $movie->setMedia ($image);
 
             if (isset($image)) {
 
-                /* ON DEFINI UN NOM UNIQUE AU FICHIER UPLOAD : LE PREG_REPLACE PERMET LA SUPPRESSION DES ESPACES ET AUTRES CARACTERES INDESIRABLES*/
+                /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
                 $image->setPicname (preg_replace ('/\W/', '_', "movie_" . uniqid ()));
 
                 // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
@@ -110,6 +110,21 @@ class MoviesController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            /* KEEP PICTURE */
+            $imageForm = $editForm->get ('media');
+            $image = $imageForm->getData ();
+            $movie->setMedia ($image);
+
+            if (isset($image)) {
+
+                /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                $image->setPicname (preg_replace ('/\W/', '_', "movie_" . uniqid ()));
+
+                // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                $this->get ('media.interface')->mediaUpload ($image);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('movies_edit', array('id' => $movie->getId()));

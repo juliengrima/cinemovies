@@ -19,14 +19,15 @@ class MoviesType extends AbstractType
                 ->add('year')
                 ->add('slider')
                 ->add ('gallery')
-//                ->add('resume')
-            ->add('media', Media::class, array(
-                'required' => false,
-//                'data_class' => null,
-            ))
-            ->add('slider', CheckboxType::class, array(
-                'required' => false,
-            ));
+                ->add('author')
+                ->add('actors')
+                ->add('resume')
+                ->add('media', Media::class, array(
+                    'required' => false,
+                ))
+                ->add('slider', CheckboxType::class, array(
+                    'required' => false,
+                ));
     }/**
      * {@inheritdoc}
      */
