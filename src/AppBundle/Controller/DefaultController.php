@@ -15,24 +15,21 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
+
+//    HOMEPAGE
     /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
-
         $em = $this->getDoctrine()->getManager();
-        $subGalleries = $em->getRepository('AppBundle:SubGallery')->findBy( array('slider' => 1));
-        $about = $em->getRepository('AppBundle:About')->findAll();
+        $movies = $em->getRepository('AppBundle:Movies')->findBy( array('slider' => 1));
         $agenda = $em->getRepository('CalendarBundle:Agenda')->findBy( array('slider' => 1) );
 
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
-            'subGalleries' => $subGalleries,
-            'abouts' => $about,
+            'movies' => $movies,
             'agendas' => $agenda
         ));
-
     }
 
     /**

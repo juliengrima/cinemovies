@@ -110,4 +110,3 @@ class Resume
         return $this->actors;
     }
 }
-

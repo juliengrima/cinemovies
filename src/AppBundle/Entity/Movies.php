@@ -196,5 +196,23 @@ class Movies
     {
         return $this->category;
     }
-}
+    /**
+     * @var \AppBundle\Entity\Category
+     */
+    private $gallery;
 
+
+    /**
+     * Set gallery
+     *
+     * @param \AppBundle\Entity\Category $gallery
+     *
+     * @return Movies
+     */
+    public function setGallery(\AppBundle\Entity\Category $gallery = null)
+    {
+        $this->gallery = $gallery;
+
+        return $this;
+    }
+}
