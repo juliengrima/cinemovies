@@ -15,4 +15,22 @@ AppBundle\Entity\Movies:
         year:
             type: date
             nullable: true
+        slider:
+            type: boolean
+            nullable: true
+
+    manyToOne:
+        gallery:
+          targetEntity: AppBundle\Entity\Category
+          joinColumn:
+            name: Category_id
+            referencedColumnName: id
+            cascade: ['all']
+    oneToOne:
+        media:
+          targetEntity: AppBundle\Entity\Media
+          cascade: ['all']
+        resume:
+          targetEntity: AppBundle\Entity\Resume
+          cascade: ['all']
     lifecycleCallbacks: {  }

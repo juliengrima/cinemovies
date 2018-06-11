@@ -7,13 +7,6 @@ namespace AppBundle\Entity;
  */
 class Category
 {
-
-    public function __toString()
-    {
-        // TODO: Implement __toString() method.
-        return $this->category;
-    }
-
     /**
      * @var integer
      */
@@ -29,6 +22,7 @@ class Category
      */
     private $header;
 
+
     /**
      * Get id
      *
@@ -40,25 +34,25 @@ class Category
     }
 
     /**
-     * Set name
+     * Set category
      *
-     * @param string $name
+     * @param string $category
      *
      * @return Category
      */
-    public function setName($category)
+    public function setCategory($category)
     {
-        $this->name = $category;
+        $this->category = $category;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get category
      *
      * @return string
      */
-    public function getName()
+    public function getCategory()
     {
         return $this->category;
     }
@@ -87,3 +81,4 @@ class Category
         return $this->header;
     }
 }
+

@@ -9,15 +9,6 @@ app_gallery:
     resource: "@AppBundle/Resources/config/routing/category.yml.yml"
     prefix:   /admin/category
 
-##############################################
-#                                            #
-#                 SUB GALLERY                #
-#                                            #
-##############################################
-
-app_subgallery:
-      resource: "@AppBundle/Resources/config/routing/subgallery.yml"
-      prefix:   /subgallery
 
 ##########################################
 ##############   LIIP IMAGINE   ##########

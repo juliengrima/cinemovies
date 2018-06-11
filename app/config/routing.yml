@@ -13,8 +13,8 @@ app_header:
 ##############################################
 
 app_gallery:
-    resource: "@AppBundle/Resources/config/routing/gallery.yml"
-    prefix:   /gallery
+    resource: "@AppBundle/Resources/config/routing/category.yml"
+    prefix:   /category
 
 ##############################################
 #                                            #
@@ -25,27 +25,6 @@ app_gallery:
 app_subgallery:
       resource: "@AppBundle/Resources/config/routing/subgallery.yml"
       prefix:   /subgallery
-
-##############################################
-#                                            #
-#                     ABOUT                  #
-#                                            #
-##############################################
-
-app_about:
-        resource: "@AppBundle/Resources/config/routing/about.yml"
-        prefix:   /about
-
-##############################################
-#                                            #
-#                  PARTNER                   #
-#                                            #
-##############################################
-
-app_partner:
-     resource: "@AppBundle/Resources/config/routing/partner.yml"
-     prefix:   /partner
-
 
 ############################################################################################################
 

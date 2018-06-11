@@ -8,7 +8,7 @@ namespace AppBundle\Entity;
 class Movies
 {
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -22,11 +22,31 @@ class Movies
      */
     private $year;
 
+    /**
+     * @var boolean
+     */
+    private $slider;
+
+    /**
+     * @var \AppBundle\Entity\Media
+     */
+    private $media;
+
+    /**
+     * @var \AppBundle\Entity\Resume
+     */
+    private $resume;
+
+    /**
+     * @var \AppBundle\Entity\Category
+     */
+    private $category;
+
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -79,6 +99,102 @@ class Movies
     public function getYear()
     {
         return $this->year;
+    }
+
+    /**
+     * Set slider
+     *
+     * @param boolean $slider
+     *
+     * @return Movies
+     */
+    public function setSlider($slider)
+    {
+        $this->slider = $slider;
+
+        return $this;
+    }
+
+    /**
+     * Get slider
+     *
+     * @return boolean
+     */
+    public function getSlider()
+    {
+        return $this->slider;
+    }
+
+    /**
+     * Set media
+     *
+     * @param \AppBundle\Entity\Media $media
+     *
+     * @return Movies
+     */
+    public function setMedia(\AppBundle\Entity\Media $media = null)
+    {
+        $this->media = $media;
+
+        return $this;
+    }
+
+    /**
+     * Get media
+     *
+     * @return \AppBundle\Entity\Media
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    /**
+     * Set resume
+     *
+     * @param \AppBundle\Entity\Resume $resume
+     *
+     * @return Movies
+     */
+    public function setResume(\AppBundle\Entity\Resume $resume = null)
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    /**
+     * Get resume
+     *
+     * @return \AppBundle\Entity\Resume
+     */
+    public function getResume()
+    {
+        return $this->resume;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \AppBundle\Entity\Category $category
+     *
+     * @return Movies
+     */
+    public function setCategory(\AppBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AppBundle\Entity\Category
+     */
+    public function getGallery()
+    {
+        return $this->category;
     }
 }
 
