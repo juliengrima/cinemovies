@@ -13,6 +13,7 @@
         <h1>{{ movie.movies }}</h1>
     </div>
 
+    {# TABLE FOR RANKING 1 MOVIE #}
     <div class="row">
         <div class="col s12 m6 l4">
             <table>
@@ -38,6 +39,7 @@
                     <td>{{ movie.resume }}</td>
                 </tr>
 
+                {# IF ADMIN ACTIVE VIEW #}
                 {% if is_granted('ROLE_ADMIN') %}
                 <tr>
                     <th>Slider</th>
@@ -58,6 +60,7 @@
 
     <div class="center">
 
+        {# IF ADMIN ACTIVE BOUTON #}
         {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ path('movies_edit', { 'id': movie.id }) }}"
                data-position="bottom"

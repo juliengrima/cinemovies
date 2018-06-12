@@ -2,6 +2,7 @@
 
 {% block body %}
 
+    {# SECURITY IF FOSUSER DON4T WORK #}
     {% if is_granted('ROLE_ADMIN') %}
 
         <div class="container">
@@ -9,6 +10,7 @@
                 <div class="row">
                     <div class="col s12">
 
+                        {# TABLE FOR RANKING #}
                         <div class="row">
                             <div class="col l4 center">
                                 <p class="title">Identifiant</p>
@@ -21,6 +23,7 @@
                             </div>
                         </div>
 
+                        {# LOOP FOR RESULT OF HEADER #}
                         {% for header in headers %}
                             <div class="row">
                                 <div class="col l4 center">
@@ -52,6 +55,7 @@
             </div>
         </div>
 
+        {# IF FOSUSER ADMIN DON'T WORKING THI IS THE 2nd SECURITY #}
     {% else %}
 
         <link rel="stylesheet" href="{{ asset('css/errors/errors_pages.css') }}" media="all">
