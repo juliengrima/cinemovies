@@ -28,6 +28,7 @@
                             <a class="modal-trigger" href="#modal{{ movie.id }}">
                                 <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio"/>
                             </a>
+                            <p class="center">{{ movie.movies }}</p>
                         </li>
                     {% endfor %}
                 </ul>
@@ -44,6 +45,7 @@
                 <div id="modal{{ movie.id }}" class="modal modal-fixed-footer">
                     <div class="modal-content">
                         <h4 class="center">{{ movie.movies }}</h4>
+                        <p>Date de sortie : {{ movie.releaseDate|date('d-m-Y') }}</p>
                         <p>auteur : {{ movie.author }}</p>
                         <div>
                             <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio-modal right"/>

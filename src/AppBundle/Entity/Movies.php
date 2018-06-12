@@ -7,7 +7,6 @@ namespace AppBundle\Entity;
  */
 class Movies
 {
-
     /**
      * @var integer
      */
@@ -17,11 +16,6 @@ class Movies
      * @var string
      */
     private $movies;
-
-    /**
-     * @var \DateTime
-     */
-    private $year;
 
     /**
      * @var boolean
@@ -52,6 +46,16 @@ class Movies
      * @var \DateTime
      */
     private $resume;
+
+    /**
+     * @var string
+     */
+    private $nationality;
+
+    /**
+     * @var \DateTime
+     */
+    private $releaseDate;
 
 
     /**
@@ -86,30 +90,6 @@ class Movies
     public function getMovies()
     {
         return $this->movies;
-    }
-
-    /**
-     * Set year
-     *
-     * @param \DateTime $year
-     *
-     * @return Movies
-     */
-    public function setYear($year)
-    {
-        $this->year = $year;
-
-        return $this;
-    }
-
-    /**
-     * Get year
-     *
-     * @return \DateTime
-     */
-    public function getYear()
-    {
-        return $this->year;
     }
 
     /**
@@ -255,11 +235,6 @@ class Movies
     {
         return $this->resume;
     }
-    /**
-     * @var string
-     */
-    private $nationality;
-
 
     /**
      * Set nationality
@@ -284,33 +259,28 @@ class Movies
     {
         return $this->nationality;
     }
-    /**
-     * @var year
-     */
-    private $release;
-
 
     /**
-     * Set release
+     * Set releaseDate
      *
-     * @param \year $release
+     * @param \DateTime $releaseDate
      *
      * @return Movies
      */
-    public function setRelease(\year $release)
+    public function setReleaseDate($releaseDate)
     {
-        $this->release = $release;
+        $this->releaseDate = $releaseDate;
 
         return $this;
     }
 
     /**
-     * Get release
+     * Get releaseDate
      *
-     * @return \year
+     * @return \DateTime
      */
-    public function getRelease()
+    public function getReleaseDate()
     {
-        return $this->release;
+        return $this->releaseDate;
     }
 }

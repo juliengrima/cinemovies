@@ -12,7 +12,7 @@ AppBundle\Entity\Movies:
         movies:
             type: string
             length: 255
-        release:
+        releaseDate:
             type: date
             nullable: true
         nationality:

@@ -22,6 +22,10 @@
                     <td>{{ movie.gallery.category }}</td>
                 </tr>
                 <tr>
+                    <th>Date de sortie</th>
+                    <td>{{ movie.releaseDate|date('d-m-Y') }}</td>
+                </tr>
+                <tr>
                     <th>Auteur</th>
                     <td>{{ movie.author }}</td>
                 </tr>
