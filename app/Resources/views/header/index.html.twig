@@ -58,6 +58,9 @@
         <ul class="right hide-on-med-and-down">
 
             {% if is_granted('ROLE_ADMIN') %}
+                <li class="">
+                    <a class="" href="{{ path('year_new') }}" >Création années</a>
+                </li>
                 <li class="li-size">
                     <a class="dropdown-button buttom" href="{{ path('header_new') }}" ><img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="imgsize"></a>
                 </li>
@@ -68,8 +71,24 @@
 
             {% for header in headers %}
             <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown{{ header.id }}" data-beloworigin="true">{{ header.name }}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+            <li>
+                <a class="dropdown-button" href="#!" data-activates="dropdown{{ header.id }}" data-beloworigin="true">
+                    {{ header.name }}
+                    <i class="mdi-navigation-arrow-drop-down right"></i>
+                </a>
+            </li>
             {% endfor %}
+
+            <li>
+                <form action="{{ path('searchController') }}" method="Post">
+                    <div class="input-field">
+                        <input name="requete" id="search" type="search" required>
+                        <label for="search">
+                            <i class="material-icons" id="search-burger">search</i>
+                        </label>
+                    </div>
+                </form>
+            </li>
 
         </ul>
     </div>

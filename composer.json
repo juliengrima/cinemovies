@@ -6,7 +6,8 @@
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
             "CalendarBundle\\": "src/CalendarBundle",
-            "AdminBundle\\": "src/AdminBundle"
+            "AdminBundle\\": "src/AdminBundle",
+            "SearchBundle\\": "src/SearchBundle"
         },
         "classmap": [
             "app/AppKernel.php",

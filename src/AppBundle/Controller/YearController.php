@@ -34,15 +34,17 @@ class YearController extends Controller
     public function newAction(Request $request)
     {
         $year = new Year();
+
         $form = $this->createForm('AppBundle\Form\YearType', $year);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($year);
             $em->flush();
 
-            return $this->redirectToRoute('year_show', array('id' => $year->getId()));
+            return $this->redirectToRoute('year_index');
         }
 
         return $this->render('year/new.html.twig', array(

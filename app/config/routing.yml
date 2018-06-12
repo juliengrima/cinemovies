@@ -36,6 +36,16 @@ app_year:
         resource: "@AppBundle/Resources/config/routing/year.yml"
         prefix:   /year
 
+##############################################
+#                                            #
+#                  SEARCH                    #
+#                                            #
+##############################################
+
+Search:
+      resource: "@SearchBundle/Resources/config/routing.yml"
+      prefix:   /search
+
 
 ############################################################################################################
 
