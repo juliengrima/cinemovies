@@ -1,50 +1,70 @@
 {% extends 'layout.html.twig' %}
 
+{# BLOC TITLE FOR TAB OF NAVIGATION#}
+{% block title %}
+    {{ movie.movies }}
+{% endblock %}
+
 {% block body %}
 
 <div class="container">
 
     <div class="row center">
-        <h1>Nouveau film</h1>
+        <h1>{{ movie.movies }}</h1>
     </div>
 
     <div class="row">
-        <div class="col s12 ">
+        <div class="col s12 m6 l4">
             <table>
                 <tbody>
                 <tr>
-                    <th>Id</th>
-                    <td>{{ movie.id }}</td>
+                    <th>Catégorie</th>
+                    <td>{{ movie.gallery.category }}</td>
                 </tr>
                 <tr>
-                    <th>Movies</th>
-                    <td>{{ movie.movies }}</td>
+                    <th>Auteur</th>
+                    <td>{{ movie.author }}</td>
                 </tr>
                 <tr>
-                    <th>Year</th>
-                    <td>{% if movie.year %}{{ movie.year|date('d-m-Y') }}{% endif %}</td>
+                    <th>Acteurs</th>
+                    <td>{{ movie.actors }}</td>
                 </tr>
+                <tr>
+                    <th>Synopsis</th>
+                    <td>{{ movie.resume }}</td>
+                </tr>
+
+                {% if is_granted('ROLE_ADMIN') %}
                 <tr>
                     <th>Slider</th>
                     <td>{% if movie.slider %}Yes{% else %}No{% endif %}</td>
                 </tr>
+                {% endif %}
+
                 </tbody>
             </table>
         </div>
+
+        <div class="col s12 m6 l6 right">
+            <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio right"/>
+        </div>
+
     </div>
 
 
     <div class="center">
 
-        <a href="{{ path('movies_edit', { 'id': movie.id }) }}"
-           data-position="bottom"
-           data-delay="50"
-           data-tooltip="Accueil">
-            <img src="{{ asset('images/local/icons/edit.svg') }}" class="plus-icon"
-                 data-position="bottom"
-                 data-delay="50"
-                 data-tooltip="Accueil">
-        </a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('movies_edit', { 'id': movie.id }) }}"
+               data-position="bottom"
+               data-delay="50"
+               data-tooltip="Accueil">
+                <img src="{{ asset('images/local/icons/edit.svg') }}" class="plus-icon"
+                     data-position="bottom"
+                     data-delay="50"
+                     data-tooltip="Accueil">
+            </a>
+        {% endif %}
 
         <a class="plus-icon" href="{{ path('homepage') }}">
             <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon"
