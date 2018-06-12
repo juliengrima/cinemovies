@@ -60,7 +60,7 @@
                 <div class="row">
                     <div class="col">
                         <ul class="collapsible">
-                        {% for randomMovie in randomMovies|slice(0,2) %}
+                        {% for randomMovie in randomMovies|slice(0,3) %}
                             <li>
                                 <div class="collapsible-header">
                                     <img id="{{ randomMovie.id }}" src="{{ asset(randomMovie.media.picpath) }}" alt="{{ randomMovie.media.picname }}" class="random-pic left"/>
