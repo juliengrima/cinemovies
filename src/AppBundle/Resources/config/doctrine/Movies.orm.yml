@@ -32,7 +32,4 @@ AppBundle\Entity\Movies:
         media:
           targetEntity: AppBundle\Entity\Media
           cascade: ['all']
-        resume:
-          targetEntity: AppBundle\Entity\Resume
-          cascade: ['all']
     lifecycleCallbacks: {  }

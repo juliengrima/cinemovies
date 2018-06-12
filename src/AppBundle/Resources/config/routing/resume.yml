@@ -1,0 +1,24 @@
+resume_index:
+    path:     /admin/index
+    defaults: { _controller: "AppBundle:Resume:index" }
+    methods:  GET
+
+resume_show:
+    path:     /admin/{id}/show
+    defaults: { _controller: "AppBundle:Resume:show" }
+    methods:  GET
+
+resume_new:
+    path:     /admin/new
+    defaults: { _controller: "AppBundle:Resume:new" }
+    methods:  [GET, POST]
+
+resume_edit:
+    path:     /admin/{id}/edit
+    defaults: { _controller: "AppBundle:Resume:edit" }
+    methods:  [GET, POST]
+
+resume_delete:
+    path:     /admin/{id}/delete
+    defaults: { _controller: "AppBundle:Resume:delete" }
+    methods:  DELETE

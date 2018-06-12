@@ -1,5 +1,5 @@
 movies_index:
-    path:     /
+    path:     /admin/index
     defaults: { _controller: "AppBundle:Movies:index" }
     methods:  GET
 
@@ -9,21 +9,21 @@ movies_list:
     methods:  GET
 
 movies_show:
-    path:     /{id}/show
+    path:     /admin/{id}/show
     defaults: { _controller: "AppBundle:Movies:show" }
     methods:  GET
 
 movies_new:
-    path:     /new
+    path:     /admin/new
     defaults: { _controller: "AppBundle:Movies:new" }
     methods:  [GET, POST]
 
 movies_edit:
-    path:     /{id}/edit
+    path:     /admin/{id}/edit
     defaults: { _controller: "AppBundle:Movies:edit" }
     methods:  [GET, POST]
 
 movies_delete:
-    path:     /{id}/delete
+    path:     /admin/{id}/delete
     defaults: { _controller: "AppBundle:Movies:delete" }
     methods:  DELETE

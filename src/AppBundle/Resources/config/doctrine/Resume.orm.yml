@@ -20,4 +20,9 @@ AppBundle\Entity\Resume:
             type: string
             length: 255
             nullable: true
+
+    oneToOne:
+        movies:
+          targetEntity: AppBundle\Entity\Movies
+          cascade: ['all']
     lifecycleCallbacks: {  }

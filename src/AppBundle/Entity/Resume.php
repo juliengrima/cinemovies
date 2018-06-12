@@ -109,4 +109,33 @@ class Resume
     {
         return $this->actors;
     }
+    /**
+     * @var \AppBundle\Entity\Movies
+     */
+    private $movies;
+
+
+    /**
+     * Set movies
+     *
+     * @param \AppBundle\Entity\Movies $movies
+     *
+     * @return Resume
+     */
+    public function setMovies(\AppBundle\Entity\Movies $movies = null)
+    {
+        $this->movies = $movies;
+
+        return $this;
+    }
+
+    /**
+     * Get movies
+     *
+     * @return \AppBundle\Entity\Movies
+     */
+    public function getMovies()
+    {
+        return $this->movies;
+    }
 }

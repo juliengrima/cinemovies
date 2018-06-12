@@ -19,8 +19,6 @@ class MoviesType extends AbstractType
                 ->add('year')
                 ->add('slider')
                 ->add ('gallery')
-                ->add('author')
-                ->add('actors')
                 ->add('resume')
                 ->add('media', Media::class, array(
                     'required' => false,

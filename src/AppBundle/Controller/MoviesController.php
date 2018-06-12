@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Movies;
 use AppBundle\Entity\Category;
+use AppBundle\Entity\Resume;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -53,7 +54,9 @@ class MoviesController extends Controller
     public function newAction(Request $request)
     {
         $movie = new Movies();
+        $resume = new Resume();
         $form = $this->createForm('AppBundle\Form\MoviesType', $movie);
+        $form = $this->createForm('AppBundle\Form\ResumeType', $resume);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -76,11 +79,12 @@ class MoviesController extends Controller
             $em->persist($movie);
             $em->flush();
 
-            return $this->redirectToRoute('movies_show', array('id' => $movie->getId()));
+            return $this->redirectToRoute('resume_new', array('id' => $movie->getId()));
         }
 
         return $this->render('movies/new.html.twig', array(
             'movie' => $movie,
+            'resume' => $resume,
             'form' => $form->createView(),
         ));
     }

@@ -14,7 +14,7 @@ app_header:
 
 app_gallery:
     resource: "@AppBundle/Resources/config/routing/category.yml"
-    prefix:   /category
+    prefix:   /admin/category
 
 ##############################################
 #                                            #
@@ -25,6 +25,16 @@ app_gallery:
 app_movies:
         resource: "@AppBundle/Resources/config/routing/movies.yml"
         prefix:   /movies
+
+##############################################
+#                                            #
+#                  RESUME                    #
+#                                            #
+##############################################
+
+app_resume:
+    resource: "@AppBundle/Resources/config/routing/resume.yml"
+    prefix:   /resume
 
 
 ############################################################################################################
