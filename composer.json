@@ -1,12 +1,13 @@
 {
-    "name": "juliengrima/sian",
+    "name": "juliengrima/cinemove",
     "license": "proprietary",
     "type": "project",
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
             "CalendarBundle\\": "src/CalendarBundle",
-            "AdminBundle\\": "src/AdminBundle"
+            "AdminBundle\\": "src/AdminBundle",
+            "SearchBundle\\": "src/SearchBundle"
         },
         "classmap": [
             "app/AppKernel.php",
@@ -25,6 +26,7 @@
         "php": ">=5.5.9",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
+        "beberlei/DoctrineExtensions": "0.3.x-dev",
         "friendsofsymfony/jsrouting-bundle": "^1.6",
         "friendsofsymfony/user-bundle": "~2.0",
         "incenteev/composer-parameter-handler": "^2.0",

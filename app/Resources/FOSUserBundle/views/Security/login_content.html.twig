@@ -10,9 +10,12 @@
 
     <div class="container">
 
+        {# ADMIN CONNEXION FORM #}
+
         <div class="row">
             <div class=" col s12 center marge">
             <form action="{{ path("fos_user_security_check") }}" method="post">
+
                 {% if csrf_token %}
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                 {% endif %}

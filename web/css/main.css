@@ -252,7 +252,7 @@ body {
     display: flex !important;
     min-height: 100vh !important;
     flex-direction: column !important;
-    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 main {
@@ -300,6 +300,11 @@ main {
 
 .slider .indicators .indicator-item.active {
     background-color: #9F9F9F;
+}
+
+.random-pic{
+    height: 30%;
+    width: 30%;
 }
 
 /*******************************************************/
@@ -369,6 +374,10 @@ main {
     margin-top: 60px;
 }
 
+.header-title{
+    font-family: 'Permanent Marker', cursive;!important;
+}
+
 /*******************************************************/
 /*******************************************************/
 /******************** SHOW ALL *************************/
@@ -376,7 +385,6 @@ main {
 /*******************************************************/
 .decal{
     margin-left: 50px;
-    font-size: 25px !important;
 }
 
 .title{

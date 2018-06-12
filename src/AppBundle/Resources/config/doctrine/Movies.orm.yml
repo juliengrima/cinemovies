@@ -1,0 +1,50 @@
+AppBundle\Entity\Movies:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\MoviesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        movies:
+            type: string
+            length: 255
+        releaseDate:
+            type: date
+            nullable: true
+        nationality:
+            type: string
+            length: 255
+            nullable: true
+        author:
+            type: string
+            length: 255
+            nullable: true
+        actors:
+            type: string
+            length: 255
+            nullable: true
+        resume:
+            type: text
+            nullable: true
+        slider:
+            type: boolean
+            nullable: true
+
+#RELATIONS BETWEEN TABLES
+
+    manyToOne:
+        gallery:
+          targetEntity: AppBundle\Entity\Category
+          joinColumn:
+            name: Category_id
+            referencedColumnName: id
+            cascade: ['all']
+    oneToOne:
+        media:
+          targetEntity: AppBundle\Entity\Media
+          cascade: ['all']
+    lifecycleCallbacks: {  }

@@ -13,38 +13,28 @@ app_header:
 ##############################################
 
 app_gallery:
-    resource: "@AppBundle/Resources/config/routing/gallery.yml"
-    prefix:   /gallery
+    resource: "@AppBundle/Resources/config/routing/category.yml"
+    prefix:   /admin/category
 
 ##############################################
 #                                            #
-#                 SUB GALLERY                #
+#                  MOVIES                    #
 #                                            #
 ##############################################
 
-app_subgallery:
-      resource: "@AppBundle/Resources/config/routing/subgallery.yml"
-      prefix:   /subgallery
+app_movies:
+        resource: "@AppBundle/Resources/config/routing/movies.yml"
+        prefix:   /movies
 
 ##############################################
 #                                            #
-#                     ABOUT                  #
+#                  SEARCH                    #
 #                                            #
 ##############################################
 
-app_about:
-        resource: "@AppBundle/Resources/config/routing/about.yml"
-        prefix:   /about
-
-##############################################
-#                                            #
-#                  PARTNER                   #
-#                                            #
-##############################################
-
-app_partner:
-     resource: "@AppBundle/Resources/config/routing/partner.yml"
-     prefix:   /partner
+Search:
+      resource: "@SearchBundle/Resources/config/routing.yml"
+      prefix:   /search
 
 
 ############################################################################################################
@@ -87,4 +77,3 @@ fos_user:
 
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
-
