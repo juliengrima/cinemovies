@@ -9,7 +9,7 @@ movies_list:
     methods:  GET
 
 movies_show:
-    path:     /admin/{id}/show
+    path:     /{id}/show
     defaults: { _controller: "AppBundle:Movies:show" }
     methods:  GET
 

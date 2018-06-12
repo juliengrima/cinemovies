@@ -17,22 +17,20 @@ use Symfony\Component\Form\Exception\TransformationFailedException;
 
 class SearchEngineController extends Controller
 {
-    // METHODE DE RECHERCHE PAR MOTS
+    // SEARCH BY WORDS
     public function searchAction(Request $request)
     {
-        // on vérifie d'abord l'existence du POST et aussi si la requete n'est pas vide.
+        // TESTING IF _POST EXIST AND NOT EMPTY
         if(isset($_POST['requete']) && $_POST['requete'] != NULL) {
 
-            // on crée une variable $requete pour faciliter l'écriture de la requête de SearchService,
-            // mais aussi pour empêcher les éventuels malins qui utiliseraient du PHP ou du JS,
-            // avec la fonction htmlspecialchars().
+            // USING htmlspecialchars() function
             $requete_str = htmlspecialchars($_POST['requete']);
             $requete = strtolower($requete_str);
 
-            // Appel du service avec lequelle on demande une requete Dql du champ titre
+            // CALLING SERVICE
             $champTitre = $this->container->get('search.service')->getSearchPostTitre ($requete);
 
-            // Si le champ titre ne retourne aucune valeur
+            // champTitre RETURN NOTHING
             if (empty($champTitre)) {
 
                 $this->addFlash (
@@ -45,7 +43,7 @@ class SearchEngineController extends Controller
                 ));
 
             }
-            // sinon si le champ titre contient une valeur on retourne un resultat
+            // IF RETURN SOMETHING
             else {
 
                 // maintenant, on va afficher la page qui va afficher les résultats
@@ -54,6 +52,7 @@ class SearchEngineController extends Controller
                 ));
             }
         }
+        // IF EMPTY
         else {
 
             $this->addFlash (

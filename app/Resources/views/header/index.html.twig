@@ -58,9 +58,6 @@
         <ul class="right hide-on-med-and-down">
 
             {% if is_granted('ROLE_ADMIN') %}
-                <li class="">
-                    <a class="" href="{{ path('year_new') }}" >Création années</a>
-                </li>
                 <li class="li-size">
                     <a class="dropdown-button buttom" href="{{ path('header_new') }}" ><img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="imgsize"></a>
                 </li>

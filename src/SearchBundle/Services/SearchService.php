@@ -8,10 +8,6 @@
 
 namespace SearchBundle\Services;
 
-use ForumBundle\ForumBundle;
-use ForumBundle\Entity\Post;
-use ForumBundle\Entity\CategoriePlateforme;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 
@@ -26,19 +22,24 @@ class SearchService extends Controller
     }
 
     public function getSearchPostTitre($requete){
-//        Alias 's' = class searchrepository
-//        Alias 'c' = categorie
+//        Alias 'm' = AppBunble:Movies
+//        Alias 'c' = category
+//        Alias 'h' = header
+//        Alias 'me' = media
 
         $repository = $this->getDoctrine()
-            ->getRepository('ForumBundle:Post');
+            ->getRepository('AppBundle:Movies');
 
-        $qb = $repository->createQueryBuilder('p')
-            ->select('p.titre, p.contenu, p.id, p.dateCreate, c.nom, c.id')
-            ->join('p.categorie', 'c')
-            ->where('REGEXP(p.titre, :regexp) != false')
-            ->orWhere('REGEXP(p.contenu, :regexp)  != false')
+        $qb = $repository->createQueryBuilder('m')
+            ->select('m.actors, m.author, m.movies, m.resume, m.id, c.category, c.id')
+            ->join ('m.gallery', 'c')
+            ->where('REGEXP(m.movies, :regexp) != false')
+            ->orWhere('REGEXP(m.resume, :regexp)  != false')
+            ->orWhere('REGEXP(m.author, :regexp)  != false')
+            ->orWhere('REGEXP(m.actors, :regexp)  != false')
+            ->orWhere('REGEXP(c.category, :regexp)  != false')
             ->setParameter('regexp', $requete)
-            ->orderBy('p.dateCreate', 'DESC');
+            ->orderBy('m.movies');
         return $qb->getQuery()->getResult();
     }
 }

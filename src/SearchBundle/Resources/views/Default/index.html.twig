@@ -2,12 +2,12 @@
 
 {% block body %}
 
-    {# ---------------------- !FAIRE LA RECUP DES DONNEES DU SEARCH CONTROLLER ET LES AFFICHER! -------------------- #}
-
     <div class="container">
         <div class="row">
             <div class="col s12">
                 <h3 class="center">Résultats de votre recherche.</h3>
+
+                {# GIVE MESSAGE FOR RESEARCH #}
 
                 {% if app.session.flashBag.has('error') %}
                     <div class="alert alert-success">
@@ -33,61 +33,44 @@
         <div class="row">
             <div class="col s12">
 
-                <table class="calendar-table responsive-table bordered striped" id="table_id">
+                {# TABLE  #}
+                <table class=" responsive-table bordered striped" id="table_id">
                     <thead>
 
-                        <th class="calendar-search-td calendar-border-topleft">
+                        <th class="">
                             <p class="calendar-p center">
-                                Catégorie du post
+                                Catégorie
                             </p>
                         </th>
-                        <th class="calendar-search-td">
+                        <th class="">
                             <p class="calendar-p center">
-                                Titre du post
+                                Titre du film
                             </p>
                         </th>
-                        <th class="calendar-search-td calendar-border-topright">
+                        <th class="">
                             <p class="calendar-p center">
-                                Contenu du post
-                            </p>
-                        </th>
-                        <th>
-                            <p class=" center">
-                                Posté le :
+                                Synopsis
                             </p>
                         </th>
 
                     </thead>
                     <tbody>
 
+                    {# RESULT LOOP #}
+
                     {% for resultat in resultats %}
 
                         <tr class="collection">
                             <td class="calendar-td-twig center">
-                                {{ resultat.nom}}
+                                {{ resultat.category}}
                             </td>
                             <td class="calendar-td-twig center">
-
-                                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MODERATEUR') or is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-                                    <a href="{{ path('post_showAllPost', { id: resultat.id }) }} " class="collection-item">
-                                        {{ resultat.titre }}
-                                    </a>
-
-                                {% else %}
-
-                                <p>
-                                    {{ resultat.titre }}
-                                </p>
-
-                                {% endif %}
-
+                                <a href="{{ path('movies_show', { id: resultat.id }) }} " class="collection-item">
+                                    {{ resultat.movies }}
+                                </a>
                             </td>
                             <td class="calendar-td-twig ombre">
-                                {{ resultat.contenu|raw }}
-                            </td>
-                            <td class="calendar-td-twig center">
-                                {{ resultat.dateCreate|date("d/m/Y") }}
+                                {{ resultat.resume|raw }}
                             </td>
                         </tr>
 
