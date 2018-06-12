@@ -1,7 +1,7 @@
-Nathalie Sian Création
+CINEMOVE
 =======================
 
-A Symfony project created on August 11, 2017, 6:03 pm.
+A Symfony project created on June 12, 2018, 1:03 pm.
 
 ```
 .-------------------------------------------------------------------------------.  
@@ -24,7 +24,7 @@ A Symfony project created on August 11, 2017, 6:03 pm.
          - _**Installation :**_
          Open a terminal, move to the folder where you want to clone the project, and copy the following lines of code
                    !! Make sure you have set up a recent version of GIT and COMPOSER !! :
-        	1. ^$ git@github.com:juliengrima/sian.git 
+        	1. ^$ git@github.com:juliengrima/cinemovies.git 
         	ou
         	2. ^$ git clone https://github.com/juliengrima/cinemovies.git`
         	3. ^$ cd cinemove
@@ -81,13 +81,13 @@ A Symfony project created on August 11, 2017, 6:03 pm.
      - _**Installation :**_
      Ouvrez un terminal, déplacez-vous dans le dossier où vous souhaitez cloner le projet et copiez les lignes de code suivantes
       !! Assurez vous d'avoir paramètré une version récente de GIT et COMPOSER !! :
-    	1. ^$ git@github.com:juliengrima/sian.git 
+    	1. ^$ git@github.com:juliengrima/cinemovies.git 
     	ou
-    	2. ^$ git clone https://github.com/sian.git`
-    	3. ^$ cd sian
+    	2. ^$ git clone https://github.com/juliengrima/cinemovies.git`
+    	3. ^$ cd cinemove
     	4. ^$ composer install 
     	        (Suivez les instructions succédant l'installation du composer)
-    	        (l'adresse mail est vivement recommander pour FosUser)
+    	        (l'adresse mail est vivement recommandé pour FosUser)
     	5. ^$ composer dump-autoload 
                 (Evite certain problèmes de bundles avec Symfony 3.3.6)
     	6. ^$ php bin/console d:d:c 
