@@ -252,7 +252,7 @@ body {
     display: flex !important;
     min-height: 100vh !important;
     flex-direction: column !important;
-    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 main {
@@ -367,6 +367,10 @@ main {
 
 .header-buttom-marge {
     margin-top: 60px;
+}
+
+.header-title{
+    font-family: 'Permanent Marker', cursive;!important;
 }
 
 /*******************************************************/

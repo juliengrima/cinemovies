@@ -16,13 +16,15 @@ AppBundle\Entity\Movies:
             type: date
             nullable: true
         author:
-            type: date
+            type: string
+            length: 255
             nullable: true
         actors:
-            type: date
+            type: string
+            length: 255
             nullable: true
         resume:
-            type: date
+            type: text
             nullable: true
         slider:
             type: boolean

@@ -76,7 +76,7 @@ class MoviesController extends Controller
             $em->persist($movie);
             $em->flush();
 
-            return $this->redirectToRoute('resume_new', array('id' => $movie->getId()));
+            return $this->redirectToRoute('movies_show', array('id' => $movie->getId()));
         }
 
         return $this->render('movies/new.html.twig', array(
@@ -127,7 +127,7 @@ class MoviesController extends Controller
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('movies_edit', array('id' => $movie->getId()));
+            return $this->redirectToRoute('movies_show', array('id' => $movie->getId()));
         }
 
         return $this->render('movies/edit.html.twig', array(

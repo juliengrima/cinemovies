@@ -20,6 +20,8 @@ class MoviesType extends AbstractType
                 ->add('slider')
                 ->add ('gallery')
                 ->add('resume')
+                ->add('actors')
+                ->add('author')
                 ->add('media', Media::class, array(
                     'required' => false,
                 ))

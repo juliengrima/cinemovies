@@ -2,89 +2,102 @@
 
 {% block body %}
 
-    <div class="container">
-        <div class="header-marge">
+<div class="container">
+
+    <div class="row">
+        <h1 class="center">Ajouter un nouveau film</h1>
+    </div>
+
+    {{ form_start(form) }}
+
+    {#1rt part TOP left col #}
+    <div class="row">
+        <div class="col s12 m6 l4">
+
             <div class="row">
-                <h1 class="center">Ajouter un nouveau film</h1>
+                <p>Sélection de la catégorie :</p>
+                {{ form_widget(form.gallery) }}
+                {{ form_errors(form.gallery) }}
             </div>
+
             <div class="row">
-                <div class="col s12 m6 l6">
+                <p>Nom du nouveau film :</p>
+                {{ form_widget(form.movies) }}
+                {{ form_errors(form.movies) }}
+            </div>
 
-                    {{ form_start(form) }}
+            <div class="row">
+                <p>Date de sortie :</p>
+                {{ form_widget(form.year) }}
+                {{ form_errors(form.year) }}
+            </div>
 
-                    <div class="row">
-                        <div class="col s12 m6 l3">
-                            <p>Sélection de la catégorie :</p>
-                        </div>
-                        <div class="col s12 m6 l3">
-                            {{ form_widget(form.gallery) }}
-                            {{ form_errors(form.gallery) }}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m6 l3">
-                            <p>Nom du nouveau film :</p>
-                        </div>
-                        <div class="col s12 m6 l3">
-                            {{ form_widget(form.movies) }}
-                            {{ form_errors(form.movies) }}
-                        </div>
+        </div>
 
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m6 l3">
-                            <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
-                        </div>
-                        <div class="col s12 m6 l3">
-                            {{ form_widget(form.media, { 'attr': {'class': 'calendar-responsive-input'} }) }}
-                            {{ form_errors(form.media) }}
-                        </div>
-                    </div>
 
-                </div>
-                <div class="col s12 m6 l6">
+    {#2nd pert TOP right col#}
 
-                    <div class="row">
-                        <div class="col s12 m6 l3">
-                            <p>Date de sortie :</p>
-                        </div>
-                        <div class="col s12 m6 l3">
-                            {{ form_widget(form.year) }}
-                            {{ form_errors(form.year) }}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m6 l3">
-                            <p>Mettre en avant :</p>
-                        </div>
-                        <div class="switch">
-                            <label>
-                                Off
-                                {{ form_widget(form.slider, { 'attr': {'class': 'checksize'} }) }}
-                                {{ form_errors(form.slider) }}
-                                <span class="lever"></span>
-                                On
-                            </label>
-                        </div>
-                    </div>
+        <div class="col s12 m6 l4">
 
-                    <div class="center">
-                        <div class="col s12 center">
-                            <button class="left" type="submit">
-                                <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
-                            </button>
+            <div class="row">
+                <p>Définir l'auteur :</p>
+                {{ form_widget(form.author) }}
+                {{ form_errors(form.author) }}
+            </div>
 
-                            <a class="" href="{{ path('homepage') }}">
-                                <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
-                            </a>
-                        </div>
+            <div class="row">
+                <p>Acteurs principaux :</p>
+                {{ form_widget(form.actors) }}
+                {{ form_errors(form.actors) }}
+            </div>
 
-                        {{ form_end(form) }}
+            <div class="row">
+                <p>Synopsis :</p>
+                {{ form_widget(form.resume) }}
+                {{ form_errors(form.resume) }}
+            </div>
 
-                    </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
+                {{ form_widget(form.media, { 'attr': {'class': 'calendar-responsive-input'} }) }}
+                {{ form_errors(form.media) }}
+            </div>
+
+            <div class="col s12 m6 l4">
+                <p>Mettre en avant :</p>
+                <div class="switch">
+                    <label>
+                        Off
+                        {{ form_widget(form.slider, { 'attr': {'class': 'checksize'} }) }}
+                        {{ form_errors(form.slider) }}
+                        <span class="lever"></span>
+                        On
+                    </label>
                 </div>
             </div>
         </div>
+
     </div>
+
+    <div class="row">
+        <div class="center">
+            <div class="col s12 center">
+                <button class="left" type="submit">
+                    <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                </button>
+
+                <a class="" href="{{ path('homepage') }}">
+                    <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+
+</div>
 
 {% endblock %}

@@ -38,6 +38,21 @@ class Movies
      */
     private $gallery;
 
+    /**
+     * @var \DateTime
+     */
+    private $author;
+
+    /**
+     * @var \DateTime
+     */
+    private $actors;
+
+    /**
+     * @var \DateTime
+     */
+    private $resume;
+
 
     /**
      * Get id
@@ -168,21 +183,6 @@ class Movies
     {
         return $this->gallery;
     }
-    /**
-     * @var \DateTime
-     */
-    private $author;
-
-    /**
-     * @var \DateTime
-     */
-    private $actors;
-
-    /**
-     * @var \DateTime
-     */
-    private $resume;
-
 
     /**
      * Set author

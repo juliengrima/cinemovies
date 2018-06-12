@@ -1,11 +1,13 @@
 {% extends 'layout.html.twig' %}
 
+{# BLOC TITLE FOR TAB OF NAVIGATION#}
 {% block title %}
     {% for category in categories %}
         {{ category.category }}
     {% endfor %}
 {% endblock %}
 
+{# SPECIFIC STYLESHEET FOR THIS PAGE #}
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/effects/style_common.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/effects/style.css') }}" />
@@ -13,6 +15,8 @@
 
 {% block body %}
 
+
+    {# TEST FOR RESPONSE OF MOVIES#}
     {% if movies != null  %}
 
         <div class="container">
@@ -29,6 +33,7 @@
                 </ul>
 
             </div>
+            {# LOOP FOR MODAL STRUCTURE #}
             {% for movie in movies %}
                 <!------------------------------- --------------- ------------------------------------->
                 <!------------------------------- --------------- ------------------------------------->
@@ -39,18 +44,20 @@
                 <div id="modal{{ movie.id }}" class="modal modal-fixed-footer">
                     <div class="modal-content">
                         <h4 class="center">{{ movie.movies }}</h4>
-                        <p>{{ movie.resume.author }}</p>
+                        <p>auteur : {{ movie.author }}</p>
                         <div>
                             <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio-modal right"/>
                         </div>
-                        <div class="valign">
-                            <p>acteurs : {{ movie.resume.actors }}</p>
+                        <div class="">
+                            <p>acteurs : {{ movie.actors }}</p>
                         </div>
-                        <div class="valign">
-                            <p>{{ movie.resume.resume }}</p>
+                        <div class="">
+                            <p>Synopsis :</p>
+                            <p>{{ movie.resume }}</p>
                         </div>
                     </div>
                     <div class="modal-footer">
+
                         {# ################# IF ADMIN IS GRANTED ###########################c#}
                         {% if is_granted('ROLE_ADMIN') %}
 
@@ -60,6 +67,7 @@
 
                         {% endif %}
                         {# ################################################################## #}
+
                         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Quitter</a>
                     </div>
                 </div>
@@ -131,7 +139,7 @@
 
             console.log('ma fonction zoom');
 
-            {% for movies in movies %}
+            {% for movie in movies %}
 
             // INNER ZOOM
             $("#{{ movie.id }}").elevateZoom({
@@ -174,45 +182,3 @@
     </script>
 
 {% endblock %}
-
-{#{% block body %}#}
-    {#<h1>Movies list</h1>#}
-
-    {#<table>#}
-        {#<thead>#}
-            {#<tr>#}
-                {#<th>Id</th>#}
-                {#<th>Movies</th>#}
-                {#<th>Year</th>#}
-                {#<th>Slider</th>#}
-                {#<th>Actions</th>#}
-            {#</tr>#}
-        {#</thead>#}
-        {#<tbody>#}
-        {#{% for movie in movies %}#}
-            {#<tr>#}
-                {#<td><a href="{{ path('movies_show', { 'id': movie.id }) }}">{{ movie.id }}</a></td>#}
-                {#<td>{{ movie.movies }}</td>#}
-                {#<td>{% if movie.year %}{{ movie.year|date('Y-m-d') }}{% endif %}</td>#}
-                {#<td>{% if movie.slider %}Yes{% else %}No{% endif %}</td>#}
-                {#<td>#}
-                    {#<ul>#}
-                        {#<li>#}
-                            {#<a href="{{ path('movies_show', { 'id': movie.id }) }}">show</a>#}
-                        {#</li>#}
-                        {#<li>#}
-                            {#<a href="{{ path('movies_edit', { 'id': movie.id }) }}">edit</a>#}
-                        {#</li>#}
-                    {#</ul>#}
-                {#</td>#}
-            {#</tr>#}
-        {#{% endfor %}#}
-        {#</tbody>#}
-    {#</table>#}
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('movies_new') }}">Create a new movie</a>#}
-        {#</li>#}
-    {#</ul>#}
-{#{% endblock %}#}
