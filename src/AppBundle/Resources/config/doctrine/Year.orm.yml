@@ -11,5 +11,5 @@ AppBundle\Entity\Year:
     fields:
         releaseDate:
             type: integer
-            nullable: true
+            nullable: false
     lifecycleCallbacks: {  }
