@@ -284,4 +284,33 @@ class Movies
     {
         return $this->nationality;
     }
+    /**
+     * @var year
+     */
+    private $release;
+
+
+    /**
+     * Set release
+     *
+     * @param \year $release
+     *
+     * @return Movies
+     */
+    public function setRelease(\year $release)
+    {
+        $this->release = $release;
+
+        return $this;
+    }
+
+    /**
+     * Get release
+     *
+     * @return \year
+     */
+    public function getRelease()
+    {
+        return $this->release;
+    }
 }

@@ -17,6 +17,7 @@ class MoviesType extends AbstractType
     {
         $builder->add('movies')
                 ->add('nationality')
+                ->add('release')
                 ->add('slider')
                 ->add ('gallery')
                 ->add('resume')
