@@ -34,8 +34,7 @@
 
             </div>
 
-
-            {#2nd pert TOP right col#}
+            {#2nd pert TOP center col#}
 
             <div class="col s12 m6 l4">
 
@@ -59,6 +58,7 @@
 
             </div>
 
+            {# 3rd part TOP RIGHT col#}
             <div class="row">
                 <div class="col s12 m6 l4">
                     <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
@@ -82,53 +82,35 @@
 
         </div>
 
-        {#<div class="row">#}
-            {#<div class="center">#}
-                {#<div class="col s12 center">#}
-                    {#<button class="left" type="submit">#}
-                        {#<img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">#}
-                    {#</button>#}
-
-                    {#<a class="" href="{{ path('homepage') }}">#}
-                        {#<img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">#}
-                    {#</a>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
-
-
-
-    {#</div>#}
-
-            <div class="row">
-                <div class="col s4 m4 l4 center">
-                    <button class="left" type="submit">
-                        <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
-                    </button>
-                </div>
-
-                <div class="col s4 m4 l4 center">
-                    <a class="" href="{{ path('homepage') }}">
-                        <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
-                    </a>
-                </div>
-                {{ form_end(edit_form) }}
-
-                {{ form_start(delete_form) }}
-
-                <div class="col s4 m4 l4 center">
-                    <button class="right" type="submit" name="action"
-                            data-position="bottom"
-                            data-delay="50"
-                            data-tooltip="supprimer">
-                        <img src="{{ asset('images/local/icons/delete.svg') }}" class="plus-icon">
-                    </button>
-                </div>
-
-                {{ form_end(delete_form) }}
-
-                </div>
+        <div class="row">
+            <div class="col s4 m4 l4 center">
+                <button class="left" type="submit">
+                    <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                </button>
             </div>
+
+            <div class="col s4 m4 l4 center">
+                <a class="" href="{{ path('homepage') }}">
+                    <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
+                </a>
+            </div>
+            {{ form_end(edit_form) }}
+
+            {{ form_start(delete_form) }}
+
+            <div class="col s4 m4 l4 center">
+                <button class="right" type="submit" name="action"
+                        data-position="bottom"
+                        data-delay="50"
+                        data-tooltip="supprimer">
+                    <img src="{{ asset('images/local/icons/delete.svg') }}" class="plus-icon">
+                </button>
+            </div>
+
+            {{ form_end(delete_form) }}
+
+            </div>
+        </div>
 
 
     </div>

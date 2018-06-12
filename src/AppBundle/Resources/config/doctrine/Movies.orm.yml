@@ -12,9 +12,6 @@ AppBundle\Entity\Movies:
         movies:
             type: string
             length: 255
-        year:
-            type: date
-            nullable: true
         author:
             type: string
             length: 255
