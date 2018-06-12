@@ -14,20 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class CategoryController extends Controller
 {
-    /**
-     * Lists all category entities.
-     *
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $categories = $em->getRepository('AppBundle:Category')->findAll();
-
-        return $this->render(':category:index.html.twig', array(
-            'categories' => $categories,
-        ));
-    }
 
     /**
      * Creates a new category entity.
@@ -44,26 +30,12 @@ class CategoryController extends Controller
             $em->persist($category);
             $em->flush();
 
-            return $this->redirectToRoute('category_show', array('id' => $category->getId()));
+            return $this->redirectToRoute('category_show_all', array('id' => $category->getId()));
         }
 
         return $this->render('category/new.html.twig', array(
             'category' => $category,
             'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a category entity.
-     *
-     */
-    public function showAction(Category $category)
-    {
-        $deleteForm = $this->createDeleteForm($category);
-
-        return $this->render('category/show.html.twig', array(
-            'category' => $category,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -120,7 +92,7 @@ class CategoryController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('category_index');
+        return $this->redirectToRoute('homepage');
     }
 
     /**
