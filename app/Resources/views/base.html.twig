@@ -13,6 +13,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" media="all">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" media="all">
+    <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Pacifico|Permanent+Marker" rel="stylesheet">
     <!-- ICONS -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -33,16 +34,9 @@
 
         {% block javascripts %}
 
-            {#<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>#}
-            <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-            {#<script src="{{ asset('js/jquery-ui.min.js') }}"></script>#}
-            {#<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>#}
+            <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>}
             <script src="{{ asset('js/materialize.js') }}"></script>
-            {#<script src="{{ asset('js/navbar/modernizr.js') }}"></script>#}
-            {#<script src="{{ asset('js/navbar/main.js') }}"></script>#}
-
             <script src="{{ asset('js/main.js') }}"></script>
-
 
         {% endblock %}
     </body>
