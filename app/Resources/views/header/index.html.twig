@@ -32,7 +32,7 @@
         margin-left: 5%;
     }
     .imgsize{
-        margin-top: 45%;
+        margin-top: 20%;
         margin-left: 20%;
         width: 50%;
         height: 50%;
@@ -44,8 +44,15 @@
     }
 
     .li-size{
-        width: 150px;
+        width: 120px;
         height: 80px;
+    }
+
+    .admin-link-color{
+        color: orangered;
+    }
+    .admin-link-color:hover{
+        color: orange;
     }
 
 </style>
@@ -59,7 +66,7 @@
 
             {% if is_granted('ROLE_ADMIN') %}
                 <li class="li-size">
-                    <a class="dropdown-button buttom" href="{{ path('movies_new') }}" >Nouveau film</a>
+                    <a class="dropdown-button buttom admin-link-color" href="{{ path('movies_new') }}" >Nouveau film</a>
                 </li>
                 <li class="li-size">
                     <a class="dropdown-button buttom" href="{{ path('header_new') }}" ><img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="imgsize"></a>
