@@ -255,4 +255,33 @@ class Movies
     {
         return $this->resume;
     }
+    /**
+     * @var string
+     */
+    private $nationality;
+
+
+    /**
+     * Set nationality
+     *
+     * @param string $nationality
+     *
+     * @return Movies
+     */
+    public function setNationality($nationality)
+    {
+        $this->nationality = $nationality;
+
+        return $this;
+    }
+
+    /**
+     * Get nationality
+     *
+     * @return string
+     */
+    public function getNationality()
+    {
+        return $this->nationality;
+    }
 }

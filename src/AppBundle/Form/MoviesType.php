@@ -16,7 +16,7 @@ class MoviesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('movies')
-                ->add('year')
+                ->add('nationality')
                 ->add('slider')
                 ->add ('gallery')
                 ->add('resume')

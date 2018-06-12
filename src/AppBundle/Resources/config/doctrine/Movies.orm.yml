@@ -12,6 +12,10 @@ AppBundle\Entity\Movies:
         movies:
             type: string
             length: 255
+        nationality:
+            type: string
+            length: 255
+            nullable: true
         author:
             type: string
             length: 255

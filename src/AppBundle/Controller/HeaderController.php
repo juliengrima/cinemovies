@@ -60,26 +60,12 @@ class HeaderController extends Controller
             $em->persist($header);
             $em->flush();
 
-            return $this->redirectToRoute('header_show', array('id' => $header->getId()));
+            return $this->redirectToRoute('header_show_all', array('id' => $header->getId()));
         }
 
         return $this->render('header/new.html.twig', array(
             'header' => $header,
             'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a header entity.
-     *
-     */
-    public function showAction(Header $header)
-    {
-        $deleteForm = $this->createDeleteForm($header);
-
-        return $this->render('header/show.html.twig', array(
-            'header' => $header,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -96,7 +82,7 @@ class HeaderController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('header_show', array('id' => $header->getId()));
+            return $this->redirectToRoute('header_show_all', array('id' => $header->getId()));
         }
 
         return $this->render('header/edit.html.twig', array(

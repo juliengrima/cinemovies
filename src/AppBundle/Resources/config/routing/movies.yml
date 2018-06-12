@@ -1,7 +1,3 @@
-movies_index:
-    path:     /admin/index
-    defaults: { _controller: "AppBundle:Movies:index" }
-    methods:  GET
 
 movies_list:
     path:     /list

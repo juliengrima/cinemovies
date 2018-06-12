@@ -13,20 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class MoviesController extends Controller
 {
-    /**
-     * Lists all movie entities.
-     *
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $movies = $em->getRepository('AppBundle:Movies')->findAll();
-
-        return $this->render('movies/index.html.twig', array(
-            'movies' => $movies,
-        ));
-    }
 
     /**
      * Lists movies entities findBy categories.

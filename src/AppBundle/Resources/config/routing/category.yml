@@ -1,12 +1,3 @@
-category_index:
-    path:     /
-    defaults: { _controller: "AppBundle:Category:index" }
-    methods:  GET
-
-category_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:Category:show" }
-    methods:  GET
 
 category_show_all:
     path:     /show_all
