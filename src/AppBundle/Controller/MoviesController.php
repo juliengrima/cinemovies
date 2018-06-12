@@ -152,7 +152,7 @@ class MoviesController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('movies_index');
+        return $this->redirectToRoute('homepage');
     }
 
     /**
