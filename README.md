@@ -43,6 +43,10 @@ A Symfony project created on August 11, 2017, 6:03 pm.
             10 for admin access click on logo (c)
                     in the footer 
                     ex : (c) create by XXXXXXXX 
+            11 In the navbar use logo + color green to create a new bouton          
+                    and after create a category in dropdown
+            12 Now you can insert a new movie 
+              
         	
     
     ## when you create a bundle :
@@ -96,7 +100,11 @@ A Symfony project created on August 11, 2017, 6:03 pm.
                 (création de l'administrateur) 
         10 Pour l'accès a l'administration il faut cliquer sur le logo (c)
                 dans le footer 
-                ex : (c) créé et géré par XXXXXXXX     
+                ex : (c) créé et géré par XXXXXXXX 
+        11 Utiliser le bouton + de couleur verte pour creer un nouveau classement     
+                puis avec le dropdown creer une categorie
+        12 maintenant vous pouvez inserer de nouveaux film en fonction 
+                du classement et des catégorie
     	
 
 ## Lors de la création d'un nouveau bundle:
