@@ -21,4 +21,5 @@ AppBundle\Entity\Category:
           joinColumn:
             name: header_id
             referencedColumnName: id
+            cascade: ['all']
     lifecycleCallbacks: {  }

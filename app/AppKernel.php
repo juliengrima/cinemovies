@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new CalendarBundle\CalendarBundle(),
             new AdminBundle\AdminBundle(),
+            new SearchBundle\SearchBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

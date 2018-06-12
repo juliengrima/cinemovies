@@ -7,6 +7,14 @@ namespace AppBundle\Entity;
  */
 class Category
 {
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->category;
+    }
+
+//    AUTO GENERATED
+
     /**
      * @var integer
      */

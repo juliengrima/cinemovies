@@ -14,17 +14,28 @@ app_header:
 
 app_gallery:
     resource: "@AppBundle/Resources/config/routing/category.yml"
-    prefix:   /category
+    prefix:   /admin/category
 
 ##############################################
 #                                            #
-#                  LISTPAGE                  #
+#                  MOVIES                    #
 #                                            #
 ##############################################
 
-app_list:
-    resource: "@AppBundle/Resources/config/routing/list.yml"
-    prefix:   /list
+app_movies:
+        resource: "@AppBundle/Resources/config/routing/movies.yml"
+        prefix:   /movies
+
+##############################################
+#                                            #
+#                  SEARCH                    #
+#                                            #
+##############################################
+
+Search:
+      resource: "@SearchBundle/Resources/config/routing.yml"
+      prefix:   /search
+
 
 ############################################################################################################
 
@@ -66,4 +77,3 @@ fos_user:
 
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
-

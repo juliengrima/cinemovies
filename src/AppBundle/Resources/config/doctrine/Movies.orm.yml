@@ -12,8 +12,23 @@ AppBundle\Entity\Movies:
         movies:
             type: string
             length: 255
-        year:
+        releaseDate:
             type: date
+            nullable: true
+        nationality:
+            type: string
+            length: 255
+            nullable: true
+        author:
+            type: string
+            length: 255
+            nullable: true
+        actors:
+            type: string
+            length: 255
+            nullable: true
+        resume:
+            type: text
             nullable: true
         slider:
             type: boolean
@@ -31,8 +46,5 @@ AppBundle\Entity\Movies:
     oneToOne:
         media:
           targetEntity: AppBundle\Entity\Media
-          cascade: ['all']
-        resume:
-          targetEntity: AppBundle\Entity\Resume
           cascade: ['all']
     lifecycleCallbacks: {  }

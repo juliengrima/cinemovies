@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('bundles/calendar/css/modal.css') }}">
 {% endblock %}
 
-    <!-- SLIDER DES DERNIERES CREATIONS -->
+    <!-- SLIDER  -->
     <div class="slider">
         <ul class="slides">
 
@@ -18,17 +18,15 @@
 
                 <li>
                     {% if movie.media != null %}
-                        <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}"/>
+                        <a href="{{ path('movies_show', { id: movie.id }) }}">
+                            <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}"/>
+                        </a>
                     {% endif %}
-
-                    {# IF TEXT IS REQUIRED #}
-                    {#<div class="caption center-align">#}
-                        {#<h3 class="font-slide">{{ subGallery.sgallery }}</h3>#}
-                        {#<h5 class="font-slide">{{ subGallery.gallery }}</h5>#}
-                    {#</div>#}
                 </li>
 
             {% endfor %}
+
+            {# CALENDAR LOOP #}
             {% for agenda in agendas %}
 
                 <li>
@@ -55,14 +53,23 @@
 
                 <div class="row">
                     <div class="col s12 m6 l6 ">
-                        <h4 class="">Je me présente</h4>
+                        <h4 class="">Notre sélection du jour</h4>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
-
-
+                        <ul class="collapsible">
+                        {% for randomMovie in randomMovies|slice(0,3) %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <img id="{{ randomMovie.id }}" src="{{ asset(randomMovie.media.picpath) }}" alt="{{ randomMovie.media.picname }}" class="random-pic left"/>
+                                    <span class="center">{{ randomMovie.movies }}</span>
+                                </div>
+                                <div class="collapsible-body"><span>{{ randomMovie.resume }}</span></div>
+                            </li>
+                        {% endfor %}
+                        </ul>
                     </div>
                 </div>
 
@@ -73,7 +80,7 @@
 
                 <div class="row">
                     <div class="col s12">
-                        <h4>Les évènements</h4>
+                        <h4>Ce mois ci au ciné</h4>
                     </div>
                 </div>
 

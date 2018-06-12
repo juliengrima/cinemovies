@@ -26,30 +26,14 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $randomMovies = $em->getRepository('AppBundle:Movies')->findAll ();
         $movies = $em->getRepository('AppBundle:Movies')->findBy( array('slider' => 1));
         $agenda = $em->getRepository('CalendarBundle:Agenda')->findBy( array('slider' => 1) );
 
         return $this->render('default/index.html.twig', array(
+            'randomMovies' => $randomMovies,
             'movies' => $movies,
-            'agendas' => $agenda
+            'agendas' => $agenda,
         ));
     }
-
-    //    LIST OF MOVIES
-    /**
-     * @Route("/", name="listpage")
-     */
-    public function listAction(Request $request)
-    {
-        $category = new category;
-        $category = $_GET['id'];
-
-        $em = $this->getDoctrine()->getManager();
-        $movies = $em->getRepository('AppBundle:Movies')->findBy( array('category' => $category));
-
-        return $this->render('default/list.html.twig', array(
-            'movies' => $movies,
-        ));
-    }
-
 }

@@ -252,7 +252,7 @@ body {
     display: flex !important;
     min-height: 100vh !important;
     flex-direction: column !important;
-    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 main {
@@ -300,6 +300,11 @@ main {
 
 .slider .indicators .indicator-item.active {
     background-color: #9F9F9F;
+}
+
+.random-pic{
+    height: 30%;
+    width: 30%;
 }
 
 /*******************************************************/
@@ -367,6 +372,10 @@ main {
 
 .header-buttom-marge {
     margin-top: 60px;
+}
+
+.header-title{
+    font-family: 'Permanent Marker', cursive;!important;
 }
 
 /*******************************************************/
