@@ -7,6 +7,7 @@ namespace AppBundle\Entity;
  */
 class Movies
 {
+
     /**
      * @var integer
      */
@@ -31,16 +32,6 @@ class Movies
      * @var \AppBundle\Entity\Media
      */
     private $media;
-
-    /**
-     * @var \AppBundle\Entity\Resume
-     */
-    private $resume;
-
-    /**
-     * @var \AppBundle\Entity\Category
-     */
-    private $category;
 
     /**
      * @var \AppBundle\Entity\Category
@@ -155,54 +146,6 @@ class Movies
     }
 
     /**
-     * Set resume
-     *
-     * @param \AppBundle\Entity\Resume $resume
-     *
-     * @return Movies
-     */
-    public function setResume(\AppBundle\Entity\Resume $resume = null)
-    {
-        $this->resume = $resume;
-
-        return $this;
-    }
-
-    /**
-     * Get resume
-     *
-     * @return \AppBundle\Entity\Resume
-     */
-    public function getResume()
-    {
-        return $this->resume;
-    }
-
-    /**
-     * Set category
-     *
-     * @param \AppBundle\Entity\Category $category
-     *
-     * @return Movies
-     */
-    public function setCategory(\AppBundle\Entity\Category $category = null)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return \AppBundle\Entity\Category
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
      * Set gallery
      *
      * @param \AppBundle\Entity\Category $gallery
@@ -217,12 +160,99 @@ class Movies
     }
 
     /**
-     * Get category
+     * Get gallery
      *
      * @return \AppBundle\Entity\Category
      */
     public function getGallery()
     {
-        return $this->category;
+        return $this->gallery;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $author;
+
+    /**
+     * @var \DateTime
+     */
+    private $actors;
+
+    /**
+     * @var \DateTime
+     */
+    private $resume;
+
+
+    /**
+     * Set author
+     *
+     * @param \DateTime $author
+     *
+     * @return Movies
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \DateTime
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set actors
+     *
+     * @param \DateTime $actors
+     *
+     * @return Movies
+     */
+    public function setActors($actors)
+    {
+        $this->actors = $actors;
+
+        return $this;
+    }
+
+    /**
+     * Get actors
+     *
+     * @return \DateTime
+     */
+    public function getActors()
+    {
+        return $this->actors;
+    }
+
+    /**
+     * Set resume
+     *
+     * @param \DateTime $resume
+     *
+     * @return Movies
+     */
+    public function setResume($resume)
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    /**
+     * Get resume
+     *
+     * @return \DateTime
+     */
+    public function getResume()
+    {
+        return $this->resume;
     }
 }
