@@ -16,15 +16,17 @@
 
             {% for movie in movies %}
 
+                {# testing 1srt media #}
                 {% if movie.media != null %}
-
                     <li>
+                        {# testing if iframe #}
                         {% if movie.iframe != null %}
                             <div class="video-wrap">{{ movie.iframe|raw }}</div>
                             <a href="{{ path('movies_show', { 'id': movie.id }) }}" class="href-wrap">
                                 <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="image-wrap"/>
                             </a>
                         {% else %}
+                            {# if not iframe #}
                             <a href="{{ path('movies_show', { 'id': movie.id }) }}">
                                 <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}"/>
                             </a>
