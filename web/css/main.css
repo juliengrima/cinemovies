@@ -285,6 +285,21 @@ main {
     margin-top: 94px;
 }
 
+.image-wrap {
+    position: relative;
+    margin-top: -325px;
+    z-index: -1;
+}
+
+.href-wrap{
+    z-index: -1;
+}
+
+.video-wrap{
+    z-index: 99;
+    pointer-events: none;
+}
+
 /*******************************************************/
 /*                                                     */
 /*                                                     */

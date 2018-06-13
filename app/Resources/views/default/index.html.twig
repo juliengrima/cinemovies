@@ -16,13 +16,22 @@
 
             {% for movie in movies %}
 
-                <li>
-                    {% if movie.media != null %}
-                        <a href="{{ path('movies_show', { id: movie.id }) }}">
-                            <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}"/>
-                        </a>
-                    {% endif %}
-                </li>
+                {% if movie.media != null %}
+
+                    <li>
+                        {% if movie.iframe != null %}
+                            <div class="video-wrap">{{ movie.iframe|raw }}</div>
+                            <a href="{{ path('movies_show', { 'id': movie.id }) }}" class="href-wrap">
+                                <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="image-wrap"/>
+                            </a>
+                        {% else %}
+                            <a href="{{ path('movies_show', { 'id': movie.id }) }}">
+                                <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}"/>
+                            </a>
+                        {% endif %}
+
+                    </li>
+                {% endif  %}
 
             {% endfor %}
 
@@ -109,4 +118,5 @@
     <script src="{{ asset('bundles/calendar/js/calendar/fullcalendar.js') }}"></script>
     <script src="{{ asset('bundles/calendar/js/main_calendar.js') }}"></script>
     <script src="{{ asset('bundles/calendar/js/calendar/calendar-events.js') }}"></script>
+
 {% endblock %}
