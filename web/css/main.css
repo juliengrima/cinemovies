@@ -438,8 +438,8 @@ main {
 }
 
 .row-position-btAddMovie{
-    position: fixed;
-    top: 60%
-    left: 50%
+    position: sticky;
+    top: 90%;
+    left: 50%;
 
 }
