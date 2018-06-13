@@ -137,8 +137,11 @@ button{
 }
 
 /* Extension TITRE */
-.backcontent {
+.page-footer {
     background-color: #546e7a !important;
+    position: sticky;
+    top: 100%;
+    z-index: 2;
 }
 
 .navbutton {
@@ -171,31 +174,6 @@ button{
     margin-right: 7%;
 }
 
-/*******************************************************/
-/*                                                     */
-/*                                                     */
-/*                   LAYOUT                            */
-/*                                                     */
-/*                                                     */
-/*******************************************************/
-/*******************************************************/
-/*******************************************************/
-/************************ NAV BAR **********************/
-/*******************************************************/
-/*******************************************************/
-.decal {
-    margin-left: 30px;
-}
-
-.fsize {
-    font-size: 15px;
-    font-family: 'Dancing Script', cursive;
-}
-
-.backnav, .backfoot {
-    background-color: black !important;
-}
-
 /* Extension TITRE */
 .backcontent {
     background-color: #546e7a !important;
@@ -213,22 +191,6 @@ button{
 .f-size {
     font-size: 70px !important;
     color: white;
-}
-.bouton-new-gallery{
-     width: 30px !important;
-     height: 30px !important;
- }
-.bouton-new-gallery-icon{
-    margin-top: -12px;
-}
-
-.material-icons-size{
-    margin-left: 40px !important;
-    font-size: 40px !important;
-}
-
-.marginright{
-    margin-right: 7%;
 }
 
 .font-size{
@@ -324,18 +286,6 @@ main {
 }
 
 /*******************************************************/
-/*******************************************************/
-/********************* CARD ABOUT **********************/
-/*******************************************************/
-/*******************************************************/
-.card-size {
-    margin-top: 40px;
-    -moz-box-shadow: 8px 8px 12px #aaa;
-    -webkit-box-shadow: 8px 8px 12px #aaa;
-    box-shadow: 8px 8px 12px #555;
-}
-
-/*******************************************************/
 /*                                                     */
 /*                                                     */
 /*                        LOGIN                        */
@@ -395,7 +345,7 @@ main {
 /*******************************************************/
 /*                                                     */
 /*                                                     */
-/*                       GALLERY                       */
+/*                       CATEGORY                      */
 /*                                                     */
 /*                                                     */
 /*******************************************************/
@@ -429,7 +379,7 @@ main {
 /*******************************************************/
 /*                                                     */
 /*                                                     */
-/*                       LISTE                         */
+/*                       MOVIES LIST                   */
 /*                                                     */
 /*                                                     */
 /*******************************************************/
@@ -483,4 +433,13 @@ main {
     padding: 0;
 }
 
-.grid-item { width: 200px; }
+.grid-item {
+    width: 200px;
+}
+
+.row-position-btAddMovie{
+    position: fixed;
+    top: 60%
+    left: 50%
+
+}
