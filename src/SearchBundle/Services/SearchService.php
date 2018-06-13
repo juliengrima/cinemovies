@@ -31,7 +31,7 @@ class SearchService extends Controller
             ->getRepository('AppBundle:Movies');
 
         $qb = $repository->createQueryBuilder('m')
-            ->select('m.actors, m.author, m.movies, m.resume, m.id, m.nationality, m.releaseDate, c.category, c.id')
+            ->select('m.actors, m.author, m.movies, m.resume, m.nationality, m.releaseDate, m.id, c.category')
             ->join ('m.gallery', 'c')
             ->where('REGEXP(m.movies, :regexp) != false')
             ->orWhere('REGEXP(m.resume, :regexp)  != false')

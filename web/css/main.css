@@ -408,6 +408,11 @@ main {
     height: auto;
 }
 
+.video-position-modal{
+    padding-top: 50px;
+    margin-top: 50px;
+}
+
 .picsize-listindex{
     height: 100px;
     width: 200px;

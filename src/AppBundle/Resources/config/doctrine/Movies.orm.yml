@@ -15,6 +15,10 @@ AppBundle\Entity\Movies:
         releaseDate:
             type: date
             nullable: true
+        iframe:
+            type: string
+            length: 255
+            nullable: true
         nationality:
             type: string
             length: 255

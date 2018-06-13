@@ -57,6 +57,11 @@ class Movies
      */
     private $releaseDate;
 
+    /**
+     * @var string
+     */
+    private $iframe;
+
 
     /**
      * Get id
@@ -282,5 +287,29 @@ class Movies
     public function getReleaseDate()
     {
         return $this->releaseDate;
+    }
+
+    /**
+     * Set iframe
+     *
+     * @param string $iframe
+     *
+     * @return Movies
+     */
+    public function setIframe($iframe)
+    {
+        $this->iframe = $iframe;
+
+        return $this;
+    }
+
+    /**
+     * Get iframe
+     *
+     * @return string
+     */
+    public function getIframe()
+    {
+        return $this->iframe;
     }
 }
