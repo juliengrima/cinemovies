@@ -36,22 +36,4 @@ class DefaultController extends Controller
             'agendas' => $agenda,
         ));
     }
-
-//    CONFIDENTIAL POLITIC
-    public function politicAction()
-    {
-        return $this->render('politic/politic.html.twig');
-    }
-
-//    CONFIDENTIAL POLITIC
-    public function termsAction()
-    {
-        return $this->render('politic/terms.html.twig');
-    }
-
-//    ABOUT
-    public function aboutAction()
-    {
-        return $this->render('politic/about.html.twig');
-    }
 }
