@@ -31,8 +31,11 @@ class SearchService extends Controller
             ->getRepository('AppBundle:Movies');
 
         $qb = $repository->createQueryBuilder('m')
+//            SELECT ALL FIELDS WE NEED
             ->select('m.actors, m.author, m.movies, m.resume, m.nationality, m.releaseDate, m.id, c.category')
+//            JOIN ENTITIES
             ->join ('m.gallery', 'c')
+//            TAKE INDICATIONS FOR FILEDS WITH REGEXP
             ->where('REGEXP(m.movies, :regexp) != false')
             ->orWhere('REGEXP(m.resume, :regexp)  != false')
             ->orWhere('REGEXP(m.author, :regexp)  != false')
