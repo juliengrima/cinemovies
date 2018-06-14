@@ -29,28 +29,13 @@
                 {% elseif movie.media != null and movie.videos != null %}
 
                     <li>
-                        {# testing if iframe #}
+                        {# testing if videos #}
 
-                        {# KEEP IT FOR YOUTUBE VIDEO  ---> <div class="video-wrap">{{ movie.iframe|raw }}</div>#}
                         <video class="video-wrap-slide" preload="auto" muted controls autoplay="true">
                             <source src="{{ asset(movie.videos.videoPath) }}" type="video/mp4">
                         </video>
                         <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="image-wrap"/>
                     </li>
-
-                {#{% else %}#}
-
-                    {#<video class="video-wrap-both" preload="auto" muted controls autoplay="true" poster="{{ movie.media.picpath }}">#}
-                        {#<source src="{{ asset(movie.videos.videoPath) }}" type="video/mp4">#}
-                    {#</video>#}
-
-                    {#<a href="{{ path('movies_show', { 'id': movie.id }) }}">#}
-                        {#<li>#}
-
-                            {#<img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="image-wrap-both"/>#}
-
-                        {#</li>#}
-                    {#</a>#}
 
                 {% endif %}
 
