@@ -52,7 +52,7 @@ class MoviesController extends Controller
             /* KEEP VIDEOS */
             $videoForm = $form->get ('videos');
             $video = $videoForm->getData ();
-            $movie->setVideos () ($video);
+            $movie->setVideos ($video);
 
             if (isset($image)) {
 
@@ -119,7 +119,7 @@ class MoviesController extends Controller
             /* KEEP VIDEOS */
             $videoForm = $editForm->get ('videos');
             $video = $videoForm->getData ();
-            $movie->setVideos () ($video);
+            $movie->setVideos ($video);
 
             if (isset($image)) {
 
@@ -137,6 +137,8 @@ class MoviesController extends Controller
 
             // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
             $this->get ('video.interface')->videoUpload ($video);
+
+
         }
 
             $this->getDoctrine()->getManager()->flush();

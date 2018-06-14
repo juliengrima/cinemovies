@@ -60,8 +60,8 @@
                             {% if movie.videos != null %}
                             <div class="">
                                <p class="video-position-modal center">
-                               <video>
-                                   <source src="{{ asset(movie.videos.videoPath) }}">
+                               <video class="video-wrap" preload="auto" controls poster="{{ movie.media.picpath }}">
+                                   <source src="{{ asset(movie.videos.videoPath) }}" type="video/mp4">
                                </video>
                                </p>
                             </div>

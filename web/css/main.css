@@ -296,8 +296,9 @@ main {
 }
 
 .video-wrap{
-    z-index: 99;
-    pointer-events: none;
+    width: 60%;
+    height: auto;
+
 }
 
 /*******************************************************/

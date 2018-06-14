@@ -7,6 +7,26 @@ namespace AppBundle\Entity;
  */
 class Videos
 {
+    // Variable temporaire pour upload de fichier
+    private $file;
+
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile($video)
+    {
+        $this->file = $video;
+        return $this;
+    }
+
+    function __toString()
+    {
+        return $this->getVideoName() . " | " . $this->getVideoPath();
+    }
+
+//    GENERATED CODE
     /**
      * @var int
      */
@@ -14,6 +34,7 @@ class Videos
 
     /**
      * @var string
+     *
      */
     private $videoName;
 
