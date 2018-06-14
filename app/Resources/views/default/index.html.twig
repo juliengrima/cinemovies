@@ -18,16 +18,21 @@
 
                 {# testing 1srt media #}
                 {% if movie.media != null %}
-                    {% if movie.iframe != null %}
-                        <li>
-                            {# testing if iframe #}
+                    {% if movie.videos != null %}
+                        <a href="{{ path('movies_show', { 'id': movie.id }) }}" class="href-wrap">
+                            <li>
+                                {# testing if iframe #}
 
-                            <div class="video-wrap">{{ movie.iframe|raw }}</div>
-                            
-                            <a href="{{ path('movies_show', { 'id': movie.id }) }}" class="href-wrap">
+                                {#<div class="video-wrap">{{ movie.iframe|raw }}</div>#}
+
+                                <video>
+                                    <source src="{{ asset(movie.videos.videoPath) }}">
+                                </video>
+
                                 <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="image-wrap"/>
-                            </a>
+
                         </li>
+                        </a>
                     {% else %}
                         <li>
                             {# if not iframe #}

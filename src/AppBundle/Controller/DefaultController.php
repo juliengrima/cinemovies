@@ -26,9 +26,9 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $randomMovies = $em->getRepository('AppBundle:Movies')->findAll ();
         $movies = $em->getRepository('AppBundle:Movies')->findBy( array('slider' => 1));
         $agenda = $em->getRepository('CalendarBundle:Agenda')->findBy( array('slider' => 1) );
+        $randomMovies = $em->getRepository('AppBundle:Movies')->findAll ();
 
         return $this->render('default/index.html.twig', array(
             'randomMovies' => $randomMovies,
