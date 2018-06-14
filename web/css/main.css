@@ -137,8 +137,11 @@ button{
 }
 
 /* Extension TITRE */
-.backcontent {
+.page-footer {
     background-color: #546e7a !important;
+    position: sticky;
+    top: 100%;
+    z-index: 2;
 }
 
 .navbutton {
@@ -171,31 +174,6 @@ button{
     margin-right: 7%;
 }
 
-/*******************************************************/
-/*                                                     */
-/*                                                     */
-/*                   LAYOUT                            */
-/*                                                     */
-/*                                                     */
-/*******************************************************/
-/*******************************************************/
-/*******************************************************/
-/************************ NAV BAR **********************/
-/*******************************************************/
-/*******************************************************/
-.decal {
-    margin-left: 30px;
-}
-
-.fsize {
-    font-size: 15px;
-    font-family: 'Dancing Script', cursive;
-}
-
-.backnav, .backfoot {
-    background-color: black !important;
-}
-
 /* Extension TITRE */
 .backcontent {
     background-color: #546e7a !important;
@@ -213,22 +191,6 @@ button{
 .f-size {
     font-size: 70px !important;
     color: white;
-}
-.bouton-new-gallery{
-     width: 30px !important;
-     height: 30px !important;
- }
-.bouton-new-gallery-icon{
-    margin-top: -12px;
-}
-
-.material-icons-size{
-    margin-left: 40px !important;
-    font-size: 40px !important;
-}
-
-.marginright{
-    margin-right: 7%;
 }
 
 .font-size{
@@ -252,7 +214,7 @@ body {
     display: flex !important;
     min-height: 100vh !important;
     flex-direction: column !important;
-    font-family: 'Dancing Script', cursive !important;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 main {
@@ -302,6 +264,11 @@ main {
     background-color: #9F9F9F;
 }
 
+.random-pic{
+    height: 30%;
+    width: 30%;
+}
+
 /*******************************************************/
 /*                                                     */
 /*                                                     */
@@ -318,16 +285,27 @@ main {
     margin-top: 94px;
 }
 
-/*******************************************************/
-/*******************************************************/
-/********************* CARD ABOUT **********************/
-/*******************************************************/
-/*******************************************************/
-.card-size {
-    margin-top: 40px;
-    -moz-box-shadow: 8px 8px 12px #aaa;
-    -webkit-box-shadow: 8px 8px 12px #aaa;
-    box-shadow: 8px 8px 12px #555;
+.image-wrap {
+    position: relative;
+    top: -105%;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+
+.href-wrap{
+    z-index: -1;
+}
+
+.video-wrap{
+    width: 60%;
+    height: auto;
+
+}
+
+.video-wrap-slide{
+    width: 100%;
+    height: 100%;
 }
 
 /*******************************************************/
@@ -369,6 +347,10 @@ main {
     margin-top: 60px;
 }
 
+.header-title{
+    font-family: 'Permanent Marker', cursive;!important;
+}
+
 /*******************************************************/
 /*******************************************************/
 /******************** SHOW ALL *************************/
@@ -376,7 +358,6 @@ main {
 /*******************************************************/
 .decal{
     margin-left: 50px;
-    font-size: 25px !important;
 }
 
 .title{
@@ -387,7 +368,7 @@ main {
 /*******************************************************/
 /*                                                     */
 /*                                                     */
-/*                       GALLERY                       */
+/*                       CATEGORY                      */
 /*                                                     */
 /*                                                     */
 /*******************************************************/
@@ -421,7 +402,7 @@ main {
 /*******************************************************/
 /*                                                     */
 /*                                                     */
-/*                       LISTE                         */
+/*                       MOVIES LIST                   */
 /*                                                     */
 /*                                                     */
 /*******************************************************/
@@ -450,6 +431,11 @@ main {
     height: auto;
 }
 
+.video-position-modal{
+    padding-top: 50px;
+    margin-top: 50px;
+}
+
 .picsize-listindex{
     height: 100px;
     width: 200px;
@@ -475,4 +461,13 @@ main {
     padding: 0;
 }
 
-.grid-item { width: 200px; }
+.grid-item {
+    width: 200px;
+}
+
+.row-position-btAddMovie{
+    position: sticky;
+    top: 90%;
+    left: 50%;
+
+}

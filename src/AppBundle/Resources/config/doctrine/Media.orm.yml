@@ -12,9 +12,9 @@ AppBundle\Entity\Media:
         picname:
             type: string
             length: 255
-            nullable: true
+            nullable: false
         picpath:
             type: string
             length: 255
-            nullable: true
+            nullable: false
     lifecycleCallbacks: {  }

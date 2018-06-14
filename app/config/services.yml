@@ -29,9 +29,19 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    # Upload Service
+    # Upload Service images
     media.interface:
         class: CalendarBundle\Services\mediaInterface
+        arguments: ['@service_container']
+
+    # Upload Service videos
+    video.interface:
+        class: CalendarBundle\Services\videoInterface
+        arguments: ['@service_container']
+
+    # [...] SearchBundle/Service
+    search.service:
+        class: SearchBundle\Services\SearchService
         arguments: ['@service_container']
 
     # add more services, or override services that need manual wiring

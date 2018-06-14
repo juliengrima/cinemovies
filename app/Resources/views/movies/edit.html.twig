@@ -1,0 +1,133 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+
+        <div class="row">
+            <h1 class="center">Modifier le film {{ movie.movies }}</h1>
+        </div>
+
+        {# EDIT MOVIES FORM #}
+        {{ form_start(edit_form) }}
+
+        {#1rt part TOP left col #}
+        <div class="row">
+            <div class="col s12 m6 l4">
+
+                <div class="row">
+                    <p>Sélection de la catégorie :</p>
+                    {{ form_widget(edit_form.gallery) }}
+                    {{ form_errors(edit_form.gallery) }}
+                </div>
+
+                <div class="row">
+                    <p>Nom du nouveau film :</p>
+                    {{ form_widget(edit_form.movies) }}
+                    {{ form_errors(edit_form.movies) }}
+                </div>
+
+                <div class="row">
+                    <p>Nationalité :</p>
+                    {{ form_widget(edit_form.nationality) }}
+                    {{ form_errors(edit_form.nationality) }}
+                </div>
+
+                <div class="row">
+                    <p>Date de sortie :</p>
+                    {{ form_widget(edit_form.releaseDate) }}
+                    {{ form_errors(edit_form.releaseDate) }}
+                </div>
+
+            </div>
+
+            {#2nd pert TOP center col#}
+
+            <div class="col s12 m6 l4">
+
+                <div class="row">
+                    <p>Définir l'auteur :</p>
+                    {{ form_widget(edit_form.author) }}
+                    {{ form_errors(edit_form.author) }}
+                </div>
+
+                <div class="row">
+                    <p>Acteurs principaux :</p>
+                    {{ form_widget(edit_form.actors) }}
+                    {{ form_errors(edit_form.actors) }}
+                </div>
+
+                <div class="row">
+                    <p>Synopsis :</p>
+                    {{ form_widget(edit_form.resume) }}
+                    {{ form_errors(edit_form.resume) }}
+                </div>
+
+                <div class="row">
+                    <p>Bande annonce (MP4) :</p>
+                    {{ form_widget(edit_form.videos) }}
+                    {{ form_errors(edit_form.videos) }}
+                </div>
+
+            </div>
+
+            {# 3rd part TOP RIGHT col#}
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
+                    {{ form_widget(edit_form.media, { 'attr': {'class': 'calendar-responsive-input'} }) }}
+                    {{ form_errors(edit_form.media) }}
+                </div>
+
+                <div class="col s12 m6 l4">
+                    <p>Mettre en avant :</p>
+                    <div class="switch">
+                        <label>
+                            Off
+                            {{ form_widget(edit_form.slider, { 'attr': {'class': 'checksize'} }) }}
+                            {{ form_errors(edit_form.slider) }}
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col s4 m4 l4 center">
+                <button class="left" type="submit">
+                    <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                </button>
+            </div>
+
+            <div class="col s4 m4 l4 center">
+                <a class="" href="{{ path('homepage') }}">
+                    <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
+                </a>
+            </div>
+            {{ form_end(edit_form) }}
+
+            {# DELETE FORM #}
+            {{ form_start(delete_form) }}
+
+            <div class="col s4 m4 l4 center">
+                <button class="right" type="submit" name="action"
+                        data-position="bottom"
+                        data-delay="50"
+                        data-tooltip="supprimer">
+                    <img src="{{ asset('images/local/icons/delete.svg') }}" class="plus-icon">
+                </button>
+            </div>
+
+            {{ form_end(delete_form) }}
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

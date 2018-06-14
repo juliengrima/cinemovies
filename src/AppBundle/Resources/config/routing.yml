@@ -1,37 +1,4 @@
+#app_resume:
+#    resource: "@AppBundle/Resources/config/routing/resume.yml"
+#    prefix:   /resume
 
-##############################################
-#                                            #
-#                   GALLERY                  #
-#                                            #
-##############################################
-
-app_gallery:
-    resource: "@AppBundle/Resources/config/routing/gallery.yml"
-    prefix:   /admin/gallery
-
-##############################################
-#                                            #
-#                 SUB GALLERY                #
-#                                            #
-##############################################
-
-app_subgallery:
-      resource: "@AppBundle/Resources/config/routing/subgallery.yml"
-      prefix:   /subgallery
-
-##############################################
-#                                            #
-#                     ABOUT                  #
-#                                            #
-##############################################
-
-app_about:
-        resource: "@AppBundle/Resources/config/routing/about.yml"
-        prefix:   /about
-
-##########################################
-##############   LIIP IMAGINE   ##########
-##########################################
-
-_liip_imagine:
-    resource: "@LiipImagineBundle/Resources/config/routing.xml"
