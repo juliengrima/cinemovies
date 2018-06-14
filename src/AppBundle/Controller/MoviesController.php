@@ -49,6 +49,11 @@ class MoviesController extends Controller
             $image = $imageForm->getData ();
             $movie->setMedia ($image);
 
+            /* KEEP VIDEOS */
+            $videoForm = $form->get ('videos');
+            $video = $videoForm->getData ();
+            $movie->setVideos ($video);
+
             if (isset($image)) {
 
                 /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
@@ -56,6 +61,15 @@ class MoviesController extends Controller
 
                 // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
                 $this->get ('media.interface')->mediaUpload ($image);
+            }
+
+            if (isset($video)) {
+
+                /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                $video->setvideoName (preg_replace ('/\W/', '_', "video_" . uniqid ()));
+
+                // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                $this->get ('video.interface')->videoUpload ($video);
             }
 
             $em = $this->getDoctrine()->getManager();
@@ -102,6 +116,11 @@ class MoviesController extends Controller
             $image = $imageForm->getData ();
             $movie->setMedia ($image);
 
+            /* KEEP VIDEOS */
+            $videoForm = $editForm->get ('videos');
+            $video = $videoForm->getData ();
+            $movie->setVideos ($video);
+
             if (isset($image)) {
 
                 /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
@@ -110,6 +129,17 @@ class MoviesController extends Controller
                 // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
                 $this->get ('media.interface')->mediaUpload ($image);
             }
+
+            if (isset($video)) {
+
+                /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+            $video->setvideoName (preg_replace ('/\W/', '_', "video_" . uniqid ()));
+
+            // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+            $this->get ('video.interface')->videoUpload ($video);
+
+
+        }
 
             $this->getDoctrine()->getManager()->flush();
 

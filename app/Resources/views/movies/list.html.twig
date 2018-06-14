@@ -57,9 +57,15 @@
                         <div class="">
                             <p>Synopsis :</p>
                             <p>{{ movie.resume }}</p>
+                            {% if movie.videos != null %}
                             <div class="">
-                               <p class="video-position-modal center">{{ movie.iframe|raw }}</p>
+                               <p class="video-position-modal center">
+                               <video class="video-wrap" preload="auto" controls poster="{{ movie.media.picpath }}">
+                                   <source src="{{ asset(movie.videos.videoPath) }}" type="video/mp4">
+                               </video>
+                               </p>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="modal-footer">
