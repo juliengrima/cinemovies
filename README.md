@@ -21,6 +21,14 @@ A Symfony project created on June 12, 2018, 1:03 pm.
     
         ## **User instructions :**
         
+        YOU CAN VISIT THE WEB SITE AT : http://cybix-tech.com/cinemovies/web/ 
+            for admin access click on logo (c)
+                        in the footer 
+                        ex : (c) create by XXXXXXXX 
+                        
+                log : admin
+                pwd : admin
+        
          - _**Installation :**_
          Open a terminal, move to the folder where you want to clone the project, and copy the following lines of code
                    !! Make sure you have set up a recent version of GIT and COMPOSER !! :
@@ -83,6 +91,14 @@ A Symfony project created on June 12, 2018, 1:03 pm.
     ## ** ---------------------------------- FRENCH --------------------------- :**
 
     ## **Instructions utilisateur :**
+    
+    VOUS POUVEZ VISITER LE SITE WEB A L'ADRESSE : http://cybix-tech.com/cinemovies/web/ 
+        l'accès a l'administration il faut cliquer sur le logo (c)
+                        dans le footer 
+                        ex : (c) créé et géré par XXXXXXXX 
+    
+                    log : admin
+                    pwd : admin
     
      - _**Installation :**_
      Ouvrez un terminal, déplacez-vous dans le dossier où vous souhaitez cloner le projet et copiez les lignes de code suivantes
