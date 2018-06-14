@@ -24,6 +24,7 @@
 ### Symfony web
 /web/bundles/
 /web/images/downloads/
+/web/images/videos/
 /web/media/cache/
 
 #### Fichiers temporaires
