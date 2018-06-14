@@ -1,0 +1,29 @@
+##############################################
+#                                            #
+#                   POLITIC                  #
+#                                            #
+##############################################
+
+politic:
+    path:     /confidentialities
+    defaults: { _controller: "AppBundle:Default:politic" }
+
+##############################################
+#                                            #
+#                   TERMS                    #
+#                                            #
+##############################################
+
+terms:
+    path:     /terms_conditions
+    defaults: { _controller: "AppBundle:Default:terms" }
+
+##############################################
+#                                            #
+#                   ABOUT                    #
+#                                            #
+##############################################
+
+about:
+    path:     /about
+    defaults: { _controller: "AppBundle:Default:about" }
