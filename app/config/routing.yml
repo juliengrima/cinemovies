@@ -1,6 +1,28 @@
+##############################################
+#                                            #
+#                   HOMEPAGE                 #
+#                                            #
+##############################################
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+##############################################
+#                                            #
+#           CONFIDENTIALITIES                #
+#                                            #
+##############################################
+
+about:
+    resource: "@AppBundle/Resources/config/routing/about.yml"
+    prefix:   /about
+
+##############################################
+#                                            #
+#                   HEADER                   #
+#                                            #
+##############################################
 
 app_header:
     resource: "@AppBundle/Resources/config/routing/header.yml"
