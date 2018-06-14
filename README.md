@@ -24,6 +24,11 @@ A Symfony project created on June 12, 2018, 1:03 pm.
          - _**Installation :**_
          Open a terminal, move to the folder where you want to clone the project, and copy the following lines of code
                    !! Make sure you have set up a recent version of GIT and COMPOSER !! :
+               
+         Check the server upload service ex: in local php.ini 
+                post_max_size = 128M
+                upload_max_filesize = 128M
+                
         	1. ^$ git@github.com:juliengrima/cinemovies.git 
         	ou
         	2. ^$ git clone https://github.com/juliengrima/cinemovies.git`
@@ -82,6 +87,12 @@ A Symfony project created on June 12, 2018, 1:03 pm.
      - _**Installation :**_
      Ouvrez un terminal, déplacez-vous dans le dossier où vous souhaitez cloner le projet et copiez les lignes de code suivantes
       !! Assurez vous d'avoir paramètré une version récente de GIT et COMPOSER !! :
+      
+      checkez le serveur et son service d'upload 
+      en local ex: php.ini 
+                      post_max_size = 128M
+                      upload_max_filesize = 128M
+      
     	1. ^$ git@github.com:juliengrima/cinemovies.git 
     	ou
     	2. ^$ git clone https://github.com/juliengrima/cinemovies.git`
