@@ -2,6 +2,8 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Form\VideosType;
+use AppBundle\Form\Media;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,13 +20,15 @@ class MoviesType extends AbstractType
         $builder->add('movies')
                 ->add('nationality')
                 ->add('releaseDate')
-                ->add ('iframe')
                 ->add('slider')
                 ->add('gallery')
                 ->add('resume')
                 ->add('actors')
                 ->add('author')
                 ->add('media', Media::class, array(
+                    'required' => false,
+                ))
+                ->add('videos', VideosType::class, array(
                     'required' => false,
                 ))
                 ->add('slider', CheckboxType::class, array(
@@ -40,13 +44,13 @@ class MoviesType extends AbstractType
         ));
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'appbundle_movies';
-    }
+//    /**
+//     * {@inheritdoc}
+//     */
+//    public function getBlockPrefix()
+//    {
+//        return 'appbundle_movies';
+//    }
 
 
 }

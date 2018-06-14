@@ -58,10 +58,9 @@ class Movies
     private $releaseDate;
 
     /**
-     * @var string
+     * @var \AppBundle\Entity\Videos
      */
-    private $iframe;
-
+    private $videos;
 
     /**
      * Get id
@@ -290,26 +289,26 @@ class Movies
     }
 
     /**
-     * Set iframe
+     * Set videos
      *
-     * @param string $iframe
+     * @param \AppBundle\Entity\Videos $videos
      *
      * @return Movies
      */
-    public function setIframe($iframe)
+    public function setVideos(\AppBundle\Entity\Videos $videos = null)
     {
-        $this->iframe = $iframe;
+        $this->videos = $videos;
 
         return $this;
     }
 
     /**
-     * Get iframe
+     * Get videos
      *
-     * @return string
+     * @return \AppBundle\Entity\Videos
      */
-    public function getIframe()
+    public function getVideos()
     {
-        return $this->iframe;
+        return $this->videos;
     }
 }

@@ -13,6 +13,7 @@ parameters:
     locale: fr
     # Path location Media
     medias_directory: '%kernel.root_dir%/../web/images/downloads'
+    videos_directory: '%kernel.root_dir%/../web/images/videos'
 
 framework:
     #esi: ~

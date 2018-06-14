@@ -1,0 +1,20 @@
+AppBundle\Entity\Videos:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\VideosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        videoName:
+            type: string
+            length: 255
+            nullable: true
+        videoPath:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }
