@@ -39,13 +39,14 @@ A Symfony project created on June 12, 2018, 1:03 pm.
         	8. ^$ php bin/console a:i --symlink 
         	        (not obligatory PUBLIC is in web) 
             9. ^$ php bin/console fos:user:create adminuser --super-admin
-                    (admin creation) 
-            10 for admin access click on logo (c)
+                    (admin creation)
+            10 In web/images repertory create 2 repertories (downloads / videos) 
+            11 for admin access click on logo (c)
                     in the footer 
                     ex : (c) create by XXXXXXXX 
-            11 In the navbar use logo + color green to create a new bouton          
+            12 In the navbar use logo + color green to create a new bouton          
                     and after create a category in dropdown
-            12 Now you can insert a new movie 
+            13 Now you can insert a new movie 
               
         	
     
@@ -97,13 +98,15 @@ A Symfony project created on June 12, 2018, 1:03 pm.
     	8. ^$ php bin/console a:i --symlink 
     	        (Non obligatoire car le dossier PUBLIC est directement dans le web)
         9. ^$ php bin/console fos:user:create adminuser --super-admin
-                (création de l'administrateur) 
-        10 Pour l'accès a l'administration il faut cliquer sur le logo (c)
+                (création de l'administrateur)
+        10 Dans le repertoire web/images créer 2 repertoires (downloads / videos)
+        
+        11 Pour l'accès a l'administration il faut cliquer sur le logo (c)
                 dans le footer 
                 ex : (c) créé et géré par XXXXXXXX 
-        11 Utiliser le bouton + de couleur verte pour creer un nouveau classement     
+        12 Utiliser le bouton + de couleur verte pour creer un nouveau classement     
                 puis avec le dropdown creer une categorie
-        12 maintenant vous pouvez inserer de nouveaux film en fonction 
+        13 maintenant vous pouvez inserer de nouveaux film en fonction 
                 du classement et des catégorie
     	
 
