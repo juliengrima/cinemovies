@@ -32,11 +32,10 @@
                         {# testing if iframe #}
 
                         {# KEEP IT FOR YOUTUBE VIDEO  ---> <div class="video-wrap">{{ movie.iframe|raw }}</div>#}
-
                         <video class="video-wrap-slide" preload="auto" muted controls autoplay="true">
                             <source src="{{ asset(movie.videos.videoPath) }}" type="video/mp4">
                         </video>
-
+                        <img src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="image-wrap"/>
                     </li>
 
                 {#{% else %}#}
