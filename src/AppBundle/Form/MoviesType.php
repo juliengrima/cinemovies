@@ -18,13 +18,15 @@ class MoviesType extends AbstractType
         $builder->add('movies')
                 ->add('nationality')
                 ->add('releaseDate')
-                ->add ('iframe')
                 ->add('slider')
                 ->add('gallery')
                 ->add('resume')
                 ->add('actors')
                 ->add('author')
                 ->add('media', Media::class, array(
+                    'required' => false,
+                ))
+                ->add('videos', Media::class, array(
                     'required' => false,
                 ))
                 ->add('slider', CheckboxType::class, array(

@@ -15,10 +15,6 @@ AppBundle\Entity\Movies:
         releaseDate:
             type: date
             nullable: true
-        iframe:
-            type: string
-            length: 255
-            nullable: true
         nationality:
             type: string
             length: 255
@@ -50,5 +46,8 @@ AppBundle\Entity\Movies:
     oneToOne:
         media:
           targetEntity: AppBundle\Entity\Media
+          cascade: ['all']
+        videos:
+          targetEntity: AppBundle\Entity\Videos
           cascade: ['all']
     lifecycleCallbacks: {  }
