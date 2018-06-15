@@ -6,17 +6,11 @@
 // ********************************************************************
 jQuery(document).ready(function($) {
 
-    console.log('jQuery de app.js a démarré julien test');
-
     carousel();
     text();
     selecteur();
     modal();
-    navbar();
-    zoom1()
-
-
-
+    // dropdown();
 });
 
 // ********************************************************************
@@ -37,7 +31,8 @@ function text() {
 
 function selecteur() {
 
-        $('select').material_select();
+    $('select').material_select();
+
 }
 
 // ********************************************************************
@@ -56,17 +51,10 @@ function modal() {
     $('.modal').modal();
 }
 
+// ********************************************************************
+// *                     DROPDOWN
+// ********************************************************************
 
-function navbar() {
-    // $('.dropdown-button').dropdown({
-    //         inDuration: 300,
-    //         outDuration: 225,
-    //         hover: true, // Activate on hover
-    //         belowOrigin: true, // Displays dropdown below the button
-    //         alignment: 'right' // Displays dropdown with edge aligned to the left of button
-    //     }
-    // );
+function dropdown() {
+    $('.dropdown-trigger').dropdown();
 }
-
-
-
