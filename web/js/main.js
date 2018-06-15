@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
     text();
     selecteur();
     modal();
-    // dropdown();
+    hide_Show();
 });
 
 // ********************************************************************
@@ -57,4 +57,19 @@ function modal() {
 
 function dropdown() {
     $('.dropdown-trigger').dropdown();
+}
+
+// ********************************************************************
+// *                    IMAGE DISPLAY
+// ********************************************************************
+
+function hide_Show() {
+    $('#hide').onclick(function () {
+        if (this.css('display'), 'none'){
+            $('.upload_file_event').css('display', 'block')
+        }
+        else {
+            $('.upload_file_event').css('display', 'none')
+        }
+    })
 }
