@@ -111,6 +111,11 @@ button{
     color: white;
 }
 
+.select-dropdown{
+    overflow-y: auto !important;
+}
+
+
 /*******************************************************/
 /*                                                     */
 /*                                                     */
