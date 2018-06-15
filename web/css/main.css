@@ -475,3 +475,19 @@ main {
     left: 50%;
 
 }
+
+/*******************************************************/
+/*                                                     */
+/*                                                     */
+/*                 MOVIES NEW / EDIT                   */
+/*                                                     */
+/*                                                     */
+/*******************************************************/
+
+.upload_file_event .preload{
+    display: none;
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+
+}
