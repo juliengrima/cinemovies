@@ -1,6 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
+    
+    <div class="upload_file_event">
+        <img src="{{ asset('images/local/icons/train.gif') }}" class="preload">
+    </div>
 
 <div class="container">
 
@@ -102,7 +106,7 @@
     <div class="row">
         <div class="center">
             <div class="col s12 center">
-                <button class="left" type="submit">
+                <button class="left" type="submit" id="hide">
                     <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
                 </button>
 
