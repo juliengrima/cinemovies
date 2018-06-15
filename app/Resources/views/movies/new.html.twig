@@ -13,7 +13,7 @@
 
     {#1rt part TOP left col #}
     <div class="row">
-        <div class="col s12 m6 l4">
+        <div class="col s12 m4 l4">
 
             <div class="row">
                 <p>Sélection de la catégorie :</p>
@@ -33,18 +33,14 @@
                 {{ form_errors(form.nationality) }}
             </div>
 
-            <div class="row">
-                <p>Date de sortie :</p>
-                {{ form_widget(form.releaseDate) }}
-                {{ form_errors(form.releaseDate) }}
-            </div>
+
 
         </div>
 
 
     {#2nd pert TOP center col#}
 
-        <div class="col s12 m6 l4">
+        <div class="col s12 m4 l4">
 
             <div class="row">
                 <p>Définir l'auteur :</p>
@@ -64,23 +60,29 @@
                 {{ form_errors(form.resume) }}
             </div>
 
-            <div class="row">
-                <p>Bande annonce (MP4) :</p>
-                {{ form_widget(form.videos) }}
-                {{ form_errors(form.videos) }}
+            <div class="row position-zIndex">
+                <p>Date de sortie :</p>
+                {{ form_widget(form.releaseDate) }}
+                {{ form_errors(form.releaseDate) }}
             </div>
 
         </div>
 
          {# 3rd PART TOP  right col #}
-        <div class="row">
-            <div class="col s12 m6 l4">
+        <div class="col s12 m4 l4">
+            <div class="row">
                 <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
                 {{ form_widget(form.media, { 'attr': {'class': 'calendar-responsive-input'} }) }}
                 {{ form_errors(form.media) }}
             </div>
 
-            <div class="col s12 m6 l4">
+            <div class="row">
+                <p>Bande annonce (MP4 64mo) :</p>
+                {{ form_widget(form.videos) }}
+                {{ form_errors(form.videos) }}
+            </div>
+
+            <div class="row">
                 <p>Mettre en avant :</p>
                 <div class="switch">
                     <label>
@@ -92,6 +94,7 @@
                     </label>
                 </div>
             </div>
+
         </div>
 
     </div>
