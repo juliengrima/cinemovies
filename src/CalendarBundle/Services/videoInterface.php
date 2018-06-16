@@ -24,8 +24,10 @@ class videoInterface extends Controller
 			$tmp = explode('/', $video->getVideoPath());
 			$filename = end($tmp);    // On récupère le nom du fichier ({{media.picname}}.extension
 			// On supprime ce fichier de la mémoire
-			unlink($this->container->getParameter('videos_directory') . '/' . $filename);
-			$video->setVideoPath(null);
+            if (file_exists ($filename)) {
+                unlink ($this->container->getParameter ('videos_directory') . '/' . $filename);
+                $video->setVideoPath (null);
+            }
 		}
 		// Puis on upload le nouveau fichier
 		$extension = $file->guessExtension();
