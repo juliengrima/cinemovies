@@ -65,7 +65,7 @@ function dropdown() {
 
 function hide_Show() {
 
-    $('#hide').onclick(function () {
+    $('#hide').click(function () {
         if (this.css('display'), 'none'){
             $('.upload_file_event').css('display', 'block')
         }
