@@ -38,12 +38,6 @@
                     {{ form_errors(edit_form.nationality) }}
                 </div>
 
-                <div class="row">
-                    <p>Date de sortie :</p>
-                    {{ form_widget(edit_form.releaseDate) }}
-                    {{ form_errors(edit_form.releaseDate) }}
-                </div>
-
             </div>
 
             {#2nd pert TOP center col#}
@@ -69,22 +63,29 @@
                 </div>
 
                 <div class="row">
-                    <p>Bande annonce (MP4) :</p>
-                    {{ form_widget(edit_form.videos) }}
-                    {{ form_errors(edit_form.videos) }}
+                    <p>Date de sortie :</p>
+                    {{ form_widget(edit_form.releaseDate) }}
+                    {{ form_errors(edit_form.releaseDate) }}
                 </div>
 
             </div>
 
             {# 3rd part TOP RIGHT col#}
-            <div class="row">
-                <div class="col s12 m6 l4">
+            <div class="col s12 m6 l4">
+                <div class="row">
                     <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
                     {{ form_widget(edit_form.media, { 'attr': {'class': 'calendar-responsive-input'} }) }}
                     {{ form_errors(edit_form.media) }}
                 </div>
 
-                <div class="col s12 m6 l4">
+
+                <div class="row">
+                    <p>Bande annonce (MP4) :</p>
+                    {{ form_widget(edit_form.videos) }}
+                    {{ form_errors(edit_form.videos) }}
+                </div>
+
+                <div class="row">
                     <p>Mettre en avant :</p>
                     <div class="switch">
                         <label>
@@ -103,7 +104,7 @@
         {# BUTTONS TO LOAD PAGES #}
         <div class="row">
             <div class="col s4 m4 l4 center">
-                <button class="left" type="submit">
+                <button id="hide" class="left hideBlock" type="submit">
                     <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon" id="hide">
                 </button>
             </div>

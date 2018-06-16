@@ -486,7 +486,6 @@ main {
 
 .upload_file_event{
     display: none;
-    transition: 1.5s;
 }
 
 .upload_file_event .preload{
@@ -495,4 +494,5 @@ main {
     height: 1200px;
     top: 50%;
     left: 50%;
+    transition: 1.5s;
 }
