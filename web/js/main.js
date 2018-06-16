@@ -65,12 +65,12 @@ function dropdown() {
 
 function hide_Show() {
 
-    $('.hideBlock').click(function () {
+    // $('#hide').click(function () {
         if (this.css('display'), 'none'){
             $('.upload_file_event').css('display', 'block')
         }
         else {
             $('.upload_file_event').css('display', 'none')
         }
-    })
+    // })
 }
