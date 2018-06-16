@@ -3,157 +3,124 @@
 {% block body %}
 
     {# PRELOADER ONCLICK JS TO WAIT UPLOADING VIDEOS #}
-
-
-<div class="container">
-
-    <div class="row">
-        <h1 class="center">Ajouter un nouveau film</h1>
+    <div class="upload_file_event">
+        <img src="{{ asset('images/local/icons/train.gif') }}" class="preload">
     </div>
 
-    {# NEW MOVIES FORM #}
-    {{ form_start(form, { 'attr': {'class': 'uploadForm'} }) }}
+    <div class="container">
 
-    {#1rt part TOP left col #}
-    <div class="row">
-        <div class="col s12 m4 l4">
+        <div class="row">
+            <h1 class="center">Ajouter un nouveau film</h1>
+        </div>
 
-            <div class="row">
-                <p>Sélection de la catégorie :</p>
-                {{ form_widget(form.gallery) }}
-                {{ form_errors(form.gallery) }}
+        {# NEW MOVIES FORM #}
+        {{ form_start(form) }}
+
+        {#1rt part TOP left col #}
+        <div class="row">
+            <div class="col s12 m4 l4">
+
+                <div class="row">
+                    <p>Sélection de la catégorie :</p>
+                    {{ form_widget(form.gallery) }}
+                    {{ form_errors(form.gallery) }}
+                </div>
+
+                <div class="row">
+                    <p>Nom du nouveau film :</p>
+                    {{ form_widget(form.movies) }}
+                    {{ form_errors(form.movies) }}
+                </div>
+
+                <div class="row">
+                    <p>Nationalité :</p>
+                    {{ form_widget(form.nationality) }}
+                    {{ form_errors(form.nationality) }}
+                </div>
+
+
+
             </div>
 
-            <div class="row">
-                <p>Nom du nouveau film :</p>
-                {{ form_widget(form.movies) }}
-                {{ form_errors(form.movies) }}
+
+        {#2nd pert TOP center col#}
+
+            <div class="col s12 m4 l4">
+
+                <div class="row">
+                    <p>Définir l'auteur :</p>
+                    {{ form_widget(form.author) }}
+                    {{ form_errors(form.author) }}
+                </div>
+
+                <div class="row">
+                    <p>Acteurs principaux :</p>
+                    {{ form_widget(form.actors) }}
+                    {{ form_errors(form.actors) }}
+                </div>
+
+                <div class="row">
+                    <p>Synopsis :</p>
+                    {{ form_widget(form.resume) }}
+                    {{ form_errors(form.resume) }}
+                </div>
+
+                <div class="row position-zIndex">
+                    <p>Date de sortie :</p>
+                    {{ form_widget(form.releaseDate) }}
+                    {{ form_errors(form.releaseDate) }}
+                </div>
+
             </div>
 
-            <div class="row">
-                <p>Nationalité :</p>
-                {{ form_widget(form.nationality) }}
-                {{ form_errors(form.nationality) }}
+             {# 3rd PART TOP  right col #}
+            <div class="col s12 m4 l4">
+                <div class="row">
+                    <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
+                    {{ form_widget(form.media, { 'attr': {'class': 'calendar-responsive-input'} }) }}
+                    {{ form_errors(form.media) }}
+                </div>
+
+                <div class="row">
+                    <p>Bande annonce (MP4 64mo) :</p>
+                    {{ form_widget(form.videos) }}
+                    {{ form_errors(form.videos) }}
+                </div>
+
+                <div class="row">
+                    <p>Mettre en avant :</p>
+                    <div class="switch">
+                        <label>
+                            Off
+                            {{ form_widget(form.slider, { 'attr': {'class': 'checksize'} }) }}
+                            {{ form_errors(form.slider) }}
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
+
             </div>
-
-
 
         </div>
 
+        {# BUTTONS TO LOAD PAGES #}
+        <div class="row">
+            <div class="center">
+                <div class="col s12 center">
+                    <button id="hide" class="left hideBlock" type="submit" >
+                        <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                    </button>
 
-    {#2nd pert TOP center col#}
-
-        <div class="col s12 m4 l4">
-
-            <div class="row">
-                <p>Définir l'auteur :</p>
-                {{ form_widget(form.author) }}
-                {{ form_errors(form.author) }}
-            </div>
-
-            <div class="row">
-                <p>Acteurs principaux :</p>
-                {{ form_widget(form.actors) }}
-                {{ form_errors(form.actors) }}
-            </div>
-
-            <div class="row">
-                <p>Synopsis :</p>
-                {{ form_widget(form.resume) }}
-                {{ form_errors(form.resume) }}
-            </div>
-
-            <div class="row position-zIndex">
-                <p>Date de sortie :</p>
-                {{ form_widget(form.releaseDate) }}
-                {{ form_errors(form.releaseDate) }}
-            </div>
-
-        </div>
-
-         {# 3rd PART TOP  right col #}
-        <div class="col s12 m4 l4">
-            <div class="row">
-                <p class="calendar-p valign">Ajouter une image (Max : 2Mo) :</p>
-                {{ form_widget(form.media, { 'attr': {'class': 'calendar-responsive-input'} }) }}
-                {{ form_errors(form.media) }}
-            </div>
-
-            <div class="row">
-                <p>Bande annonce (MP4 64mo) :</p>
-                {{ form_widget(form.videos, { 'attr': {'class': 'userImage'} }) }}
-                {{ form_errors(form.videos) }}
-            </div>
-
-            <div class="row">
-                <p>Mettre en avant :</p>
-                <div class="switch">
-                    <label>
-                        Off
-                        {{ form_widget(form.slider, { 'attr': {'class': 'checksize'} }) }}
-                        {{ form_errors(form.slider) }}
-                        <span class="lever"></span>
-                        On
-                    </label>
+                    <a class="" href="{{ path('homepage') }}">
+                        <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
+                    </a>
                 </div>
             </div>
-
         </div>
+
+        {{ form_end(form) }}
 
     </div>
-
-    {# BUTTONS TO LOAD PAGES #}
-    <div class="row">
-        <div class="center">
-            <div class="col s12 center">
-                <button id="btnSubmit" class="left btnSubmit" type="submit" >
-                    <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
-                </button>
-                <div id="progress-div"><div id="progress-bar"></div></div>
-                <div id="targetLayer"></div>
-
-                <a class="" href="{{ path('homepage') }}">
-                    <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
-                </a>
-            </div>
-        </div>
-
-        <div class="upload_file_event" id="loader-icon" style="display:none;">
-            <img src="{{ asset('images/local/icons/train.gif') }}" class="preload">
-        </div>
-
-    </div>
-
-    {{ form_end(form) }}
-
-</div>
-
-
-    {# PREOADER UPLOAD #}
-    <script>
-        $(document).ready(function() {
-            $('.uploadForm').submit(function(e) {
-                if($('.userImage').val()) {
-                    e.preventDefault();
-                    $('#loader-icon').show();
-                    $(this).ajaxSubmit({
-                        target:   '#targetLayer',
-                        beforeSubmit: function() {
-                            $("#progress-bar").width('0%');
-                        },
-                        uploadProgress: function (event, position, total, percentComplete){
-                            $("#progress-bar").width(percentComplete + '%');
-                            $("#progress-bar").html('<div id="progress-status">' + percentComplete +' %</div>')
-                        },
-                        success:function (){
-                            $('#loader-icon').hide();
-                        },
-                        resetForm: true
-                    });
-                    return false;
-                }
-            });
-        });
-    </script>
 
 {% endblock %}
