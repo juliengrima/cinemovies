@@ -3,11 +3,7 @@
 {% block body %}
 
     {# PRELOADER ONCLICK JS TO WAIT UPLOADING VIDEOS #}
-    <div class="upload_file_event" id="loader-icon">
-        <img src="{{ asset('images/local/icons/train.gif') }}" class="preload">
-        <div id="progress-div"><div id="progress-bar"></div></div>
-        <div id="targetLayer"></div>
-    </div>
+
 
 <div class="container">
 
@@ -110,15 +106,22 @@
     <div class="row">
         <div class="center">
             <div class="col s12 center">
-                <button class="left" type="submit" id="hide">
+                <button id="btnSubmit" class="left btnSubmit" type="submit" >
                     <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
                 </button>
+                <div id="progress-div"><div id="progress-bar"></div></div>
+                <div id="targetLayer"></div>
 
                 <a class="" href="{{ path('homepage') }}">
                     <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
                 </a>
             </div>
         </div>
+
+        <div class="upload_file_event" id="loader-icon" style="display:none;">
+            <img src="{{ asset('images/local/icons/train.gif') }}" class="preload">
+        </div>
+
     </div>
 
     {{ form_end(form) }}
@@ -145,7 +148,7 @@
                         success:function (){
                             $('#loader-icon').hide();
                         },
-                        resetForm: false
+                        resetForm: true
                     });
                     return false;
                 }
