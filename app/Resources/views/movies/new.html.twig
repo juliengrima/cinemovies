@@ -85,7 +85,7 @@
 
             <div class="row">
                 <p>Bande annonce (MP4 64mo) :</p>
-                {{ form_widget(form.videos{ 'id': 'userImage' }) }}
+                {{ form_widget(form.videos, { 'attr': {'class': 'userImage'} }) }}
                 {{ form_errors(form.videos) }}
             </div>
 
