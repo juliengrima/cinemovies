@@ -485,8 +485,8 @@ main {
 /*******************************************************/
 
 .upload_file_event{
-    display: none;
-    transition: 1.5s;
+    /*display: none;*/
+    /*transition: 1.5s;*/
 }
 
 .upload_file_event .preload{

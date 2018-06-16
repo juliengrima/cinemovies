@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
     text();
     selecteur();
     modal();
-    hide_Show();
+    // hide_Show();
 });
 
 // ********************************************************************
