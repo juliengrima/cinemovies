@@ -76,7 +76,7 @@ function hide_Show() {
 
     $(document).ready(function() {
         $('.uploadForm').submit(function(e) {
-            if($('#userImage').val()) {
+            if($('.userImage').val()) {
                 e.preventDefault();
                 $('#loader-icon').show();
                 $(this).ajaxSubmit({
