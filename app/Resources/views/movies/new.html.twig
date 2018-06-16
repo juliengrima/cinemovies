@@ -3,6 +3,9 @@
 {% block body %}
 
     {# PRELOADER ONCLICK JS TO WAIT UPLOADING VIDEOS #}
+    <div class="upload_file_event">
+        <img src="{{ asset('images/local/icons/train.gif') }}" class="preload">
+    </div>
 
 
 <div class="container">
@@ -81,7 +84,7 @@
 
             <div class="row">
                 <p>Bande annonce (MP4 64mo) :</p>
-                {{ form_widget(form.videos, { 'attr': {'class': 'userImage'} }) }}
+                {{ form_widget(form.videos) }}
                 {{ form_errors(form.videos) }}
             </div>
 
@@ -106,54 +109,19 @@
     <div class="row">
         <div class="center">
             <div class="col s12 center">
-                <button id="btnSubmit" class="left btnSubmit" type="submit" >
+                <button id="hide" class="left hideBlock" type="submit" >
                     <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
                 </button>
-                <div id="progress-div"><div id="progress-bar"></div></div>
-                <div id="targetLayer"></div>
 
                 <a class="" href="{{ path('homepage') }}">
                     <img src="{{ asset('images/local/icons/home-icon.svg') }}" class="plus-icon">
                 </a>
             </div>
         </div>
-
-        <div class="upload_file_event" id="loader-icon" style="display:none;">
-            <img src="{{ asset('images/local/icons/train.gif') }}" class="preload">
-        </div>
-
     </div>
 
     {{ form_end(form) }}
 
 </div>
-
-
-    {# PREOADER UPLOAD #}
-    <script>
-        $(document).ready(function() {
-            $('.uploadForm').submit(function(e) {
-                if($('.userImage').val()) {
-                    e.preventDefault();
-                    $('#loader-icon').show();
-                    $(this).ajaxSubmit({
-                        target:   '#targetLayer',
-                        beforeSubmit: function() {
-                            $("#progress-bar").width('0%');
-                        },
-                        uploadProgress: function (event, position, total, percentComplete){
-                            $("#progress-bar").width(percentComplete + '%');
-                            $("#progress-bar").html('<div id="progress-status">' + percentComplete +' %</div>')
-                        },
-                        success:function (){
-                            $('#loader-icon').hide();
-                        },
-                        resetForm: true
-                    });
-                    return false;
-                }
-            });
-        });
-    </script>
 
 {% endblock %}
