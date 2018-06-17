@@ -51,9 +51,11 @@
             </table>
         </div>
 
-        <div class="col s12 m6 l6 right">
-            <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio right"/>
-        </div>
+        {% if movie.media != null %}
+            <div class="col s12 m6 l6 right">
+                <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio right"/>
+            </div>
+        {% endif %}
 
     </div>
 
@@ -61,7 +63,7 @@
         <div class="row">
             <div class="col s12">
                 <p class="center">
-                    <video class="video-wrap" preload="auto" controls poster="{{ movie.media.picpath }}">
+                    <video class="video-wrap" preload="auto" controls poster="{% if movie.media != null %}{{ movie.media.picpath }}{% endif %}">
                         <source src="{{ asset(movie.videos.videoPath) }}" type="video/mp4">
                     </video>
                 </p>

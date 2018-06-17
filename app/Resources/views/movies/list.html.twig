@@ -27,9 +27,11 @@
                     {% for movie in movies %}
                         <li class="grid-item">
                             <a class="modal-trigger" href="#modal{{ movie.id }}">
-                                <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio"/>
+                                {% if movie.media != null %}
+                                    <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio"/>
+                                {% endif %}
+                                <p class="center">{{ movie.movies }}</p>
                             </a>
-                            <p class="center">{{ movie.movies }}</p>
                         </li>
                     {% endfor %}
                 </ul>
@@ -48,9 +50,11 @@
                         <h4 class="center">{{ movie.movies }}</h4>
                         <p>Date de sortie : {{ movie.releaseDate|date('d-m-Y') }}</p>
                         <p>auteur : {{ movie.author }}</p>
-                        <div>
-                            <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio-modal right"/>
-                        </div>
+                        {% if movie.media != null %}
+                            <div>
+                                <img id="{{ movie.id }}" src="{{ asset(movie.media.picpath) }}" alt="{{ movie.media.picname }}" class="picratio-modal right"/>
+                            </div>
+                        {% endif %}
                         <div class="">
                             <p>acteurs : {{ movie.actors }}</p>
                         </div>
@@ -60,7 +64,7 @@
                             {% if movie.videos != null %}
                             <div class="">
                                <p class="video-position-modal center">
-                               <video class="video-wrap" preload="auto" controls poster="{{ movie.media.picpath }}">
+                               <video class="video-wrap" preload="auto" controls poster="{% if movie.media != null %}{{ movie.media.picpath }}{% endif %}">
                                    <source src="{{ asset(movie.videos.videoPath) }}" type="video/mp4">
                                </video>
                                </p>
@@ -93,8 +97,13 @@
 
         <div class="container">
 
-            <div class="valign-wrapper">
-                <h5>Nous n'avons pas trouvé votre recherche</h5>
+            <div class="row center">
+                <div class="valign-wrapper center">
+                    <h5>Nous n'avons pas trouvé votre recherche</h5>
+                </div>
+                <div>
+                    <img src="{{ asset('images/local/icons/train.gif') }}" class="picratio">
+                </div>
             </div>
 
         </div>

@@ -65,11 +65,8 @@ function dropdown() {
 
 function hide_Show() {
 
-    if ('.upload_file_event'.css('display'), 'none'){
-        $('.upload_file_event').css('display', 'block')
-    }
-    else {
-        $('.upload_file_event').css('display', 'none')
+    if (this.css('display', 'none')) {
+        $('#preload-placeholder').css('display', 'block').html('<img src="../images/local/icons/train.gif" width="1600" height="900" />');
     }
 
 }
