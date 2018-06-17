@@ -2,11 +2,6 @@
 
 {% block body %}
 
-    {# PRELOADER ONCLICK JS TO WAIT UPLOADING VIDEOS #}
-    <div id="preload-placeholder">
-    </div>
-    <!----------------------------- VIEW --------------------------------->
-
     <div class="container">
 
         <div class="row">
@@ -14,7 +9,7 @@
         </div>
 
         {# EDIT MOVIES FORM #}
-        {{ form_start(edit_form, {'onsubmit':"hide_Show()"}) }}
+        {{ form_start(edit_form, { 'attr': {'onsubmit': 'ShowLoading()'} }) }}
 
         {#1rt part TOP left col #}
         <div class="row">
@@ -104,7 +99,7 @@
         {# BUTTONS TO LOAD PAGES #}
         <div class="row">
             <div class="col s4 m4 l4 center">
-                <button class="left" type="submit" onclick="hide_Show()">
+                <button class="left" type="submit">
                     <img src="{{ asset('images/local/icons/plus-icon.svg') }}" class="plus-icon">
                 </button>
             </div>
@@ -133,8 +128,24 @@
             </div>
         </div>
 
-
     </div>
+
+    {# PRELOADER ONCLICK JS TO WAIT UPLOADING VIDEOS #}
+    <script type="text/javascript">
+        function ShowLoading(e) {
+            var div = document.createElement('div');
+            var img = document.createElement('img');
+            img.src = '{{ asset('images/local/icons/train.gif') }}';
+            div.innerHTML = "Chargement en cours...<br />";
+            div.style.cssText = 'position: absolute; top: 25%; left: 10%; z-index: 99999; width: 1200px; height: 720px; text-align: center; background: #EDDBB0; border: 0px solid #000';
+            div.appendChild(img);
+            document.body.appendChild(div);
+            return true;
+            // These 2 lines cancel form submission, so only use if needed.
+            //window.event.cancelBubble = true;
+            //e.stopPropagation();
+        }
+    </script>
 
 
 {% endblock %}
