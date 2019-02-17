@@ -136,8 +136,8 @@
             var div = document.createElement('div');
             var img = document.createElement('img');
             img.src = '{{ asset('images/local/icons/train.gif') }}';
-            div.innerHTML = "Chargement en cours...<br />";
-            div.style.cssText = 'position: absolute; top: 25%; left: 10%; z-index: 99999; width: 1200px; height: 720px; text-align: center; background: #EDDBB0; border: 0px solid #000';
+            div.innerHTML = "<P style='color: whitesmoke;'>Chargement en cours...<P>";
+            div.style.cssText = 'position: absolute; top: 25%; left: 10%; z-index: 99999; width: 1200px; height: 720px; text-align: center; background: #546e7a; border: 0px solid #000';
             div.appendChild(img);
             document.body.appendChild(div);
             return true;

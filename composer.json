@@ -24,10 +24,10 @@
     },
     "require": {
         "php": ">=5.5.9",
+        "beberlei/DoctrineExtensions": "0.3.x-dev",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
-        "beberlei/DoctrineExtensions": "0.3.x-dev",
-        "friendsofsymfony/jsrouting-bundle": "^1.6",
+        "friendsofsymfony/jsrouting-bundle": "^2.2",
         "friendsofsymfony/user-bundle": "~2.0",
         "incenteev/composer-parameter-handler": "^2.0",
         "liip/imagine-bundle": "^1.9",
